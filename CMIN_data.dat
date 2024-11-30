@@ -1,0 +1,7 @@
+AQME v 1.6.1 2024/11/10 23:16:11 
+Citation: AQME v 1.6.1, Alegre-Requena, J. V.; Sowndarya, S.; Perez-Soto, R.; Alturaifi, T.; Paton, R. AQME: Automated Quantum Mechanical Environments for Researchers and Educators. Wiley Interdiscip. Rev. Comput. Mol. Sci. 2023, DOI: 10.1002/wcms.1663.
+
+Command line used in AQME: python -m aqme --cmin --input "calix124_147.csv" --program "rdkit" --destination "MultiCalix"
+
+
+x  Program not supported for CMIN refinement! Specify: program="xtb" (or "ani")

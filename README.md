@@ -1,7 +1,8 @@
 # Project: Advanced NiO Surface Modeling with VASP
 ### About the Author
-This project is developed and maintained by **Артём Бетехтин**, a computational chemist and graduate student at the **National Center for Infochemistry at ITMO University**, the leading institution in computational and theoretical chemistry. My primary research focuses on applying density functional theory (DFT) to investigate molecular systems, chemical reactivity, and thermodynamic properties. I aim to integrate advanced mathematical techniques with quantum chemistry to uncover fundamental insights into material and molecular behavior.
+This project is developed and maintained by **Artyom Betekhtin**, a computational chemist and graduate student at the **[Infochemistry Scientific Center at ITMO University](https://infochemistry.ru/)**, the leading institution in computational and theoretical chemistry. My primary research focuses on applying density functional theory (DFT) to investigate molecular systems, chemical reactivity, and thermodynamic properties. I aim to integrate advanced mathematical techniques with quantum chemistry to uncover fundamental insights into material and molecular behavior.
 
+I am also an active member of **[Group 24](https://theorchem.ru/wiki/Группа_теоретической_химии_(№24)_ИОХ_РАН) at the Federal State Budgetary Institution of Science N. D. Zelinsky Institute of Organic Chemistry of the Russian Academy of Sciences [(ZIOC RAS)](https://zioc.ru/)**, where I contribute to collaborative projects involving surface modeling, adsorption studies, and catalyst design. My work bridges theoretical and computational chemistry to provide insights into material behavior at the atomic scale.
 #### Research and Expertise:
 I specialize in **reaction mechanisms**, **thermodynamic stability**, and **enantioselectivity studies**, employing state-of-the-art quantum chemical methods. My expertise includes:
 

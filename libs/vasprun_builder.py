@@ -1,12 +1,8 @@
 #!/usr/bin/env  python
 # encoding: utf-8
-from version import __version__
 from lxml import etree
 import numpy as np
-from pprint import pprint
-from optparse import OptionParser
 import pandas as pd
-from tabulate import tabulate
 import warnings
 
 import matplotlib as mpl

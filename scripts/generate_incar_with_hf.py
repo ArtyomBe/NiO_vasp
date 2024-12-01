@@ -3,7 +3,7 @@ import shutil
 
 # Основной путь для сохранения файлов
 base_path = "/Users/artyombetekhtin/Desktop/Кванты/NiO/HF_percentage_study/INPUTS"
-source_path = "/Users/artyombetekhtin/PycharmProjects/All_for_Quants/vasprun-xml/builder"
+source_path = "//vasprun-xml/builder"
 
 # Шаблон содержимого файла INCAR
 base_content = """SYSTEM   = NiO

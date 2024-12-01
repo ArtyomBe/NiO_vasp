@@ -1,5 +1,5 @@
 import pprint
-from vasprun_builder.vasprun_optimized import vasprun
+from libs.vasprun_optimized import vasprun
 
 # Основная функция
 def main(vasprun_file, verbosity=1):
@@ -47,6 +47,6 @@ def generate_plots(vasp):
 
 # Точка входа
 if __name__ == "__main__":
-    vasprun_file = 'vasprun_CA_no_U.xml'  # Укажите путь к вашему vasprun.xml
+    vasprun_file = '../test_cases/vasprun_CA_no_U.xml'  # Укажите путь к вашему vasprun.xml
     verbosity_level = 1  # Уровень детализации
     main(vasprun_file, verbosity=verbosity_level)

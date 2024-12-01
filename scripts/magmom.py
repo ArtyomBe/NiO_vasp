@@ -56,6 +56,6 @@ doc.add_paragraph(summary)
 
 # Save document
 
-doc.save("/Users/artyombetekhtin/PycharmProjects/All_for_Quants/Домашнее задание 2 - Бетехтин Артём Андреевич.docx")
+doc.save("/Users/artyombetekhtin/PycharmProjects/NiO_vasp/Домашнее задание 2 - Бетехтин Артём Андреевич.docx")
 
 

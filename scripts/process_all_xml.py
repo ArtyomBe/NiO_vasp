@@ -2,14 +2,14 @@ import os
 import shutil
 import logging
 from xml.etree import ElementTree as ET
-from vasprun_builder.vasprun_optimized import vasprun
+from libs.vasprun_optimized import vasprun
 
 # Настройка логгирования
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
     handlers=[
-        logging.FileHandler("processing_log.txt", mode='w'),
+        logging.FileHandler("../output_analysis/surfaces/1_0_0/graphs/processing_log.txt", mode='w'),
         logging.StreamHandler()
     ]
 )
@@ -109,7 +109,7 @@ def process_xml_files(input_dir: str, output_dir: str):
 
 if __name__ == "__main__":
     # Путь к директории с XML-файлами
-    input_directory = '/Users/artyombetekhtin/PycharmProjects/All_for_Quants/vasprun-xml/builder/xmls'
+    input_directory = '/Users/artyombetekhtin/PycharmProjects/NiO_vasp/vasprun-xml/builder/xmls'
     output_directory = os.path.join(input_directory, 'graphs')
 
     # Подготовка директории и запуск обработки

@@ -8,4 +8,4 @@ nio_bulk = bulk('NiO', 'rocksalt', a=4.17)
 surface_nio_100 = surface(nio_bulk, (1, 0, 0), layers=10, vacuum=15)
 
 # Сохраняем в формате POSCAR
-write('POSCAR', surface_nio_100)
+write('../POSCAR', surface_nio_100)

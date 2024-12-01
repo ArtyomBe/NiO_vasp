@@ -847,7 +847,7 @@ class vasprun:
         return mydos, labels
 
     def plot_dos(self, ax=None, filename=None, smear=None, flip=False,
-                 style='t', xlim=[-3, 3], ylim=[None, None], dos_range=[0, None], dpi=1200):
+                 style='t', xlim=[None, None], ylim=[None, None], dos_range=[0, None], dpi=1200):
         """
         plot the DOS
 
@@ -867,6 +867,15 @@ class vasprun:
         tdos = np.array(self.values['calculation']['tdos'][0])
         tdos[:, 0] -= efermi
         e = tdos[:, 0]
+
+        # Automatically determine xlim if not provided
+        if xlim == [None, None]:  # If no xlim provided
+            xlim = [min(e), max(e)]
+        elif None in xlim:  # Partially provided xlim
+            x_min = xlim[0] if xlim[0] is not None else min(e)
+            x_max = xlim[1] if xlim[1] is not None else max(e)
+            xlim = [x_min, x_max]
+
         rows = (e > xlim[0]) & (e < xlim[1])
         e = e[rows]
         plt_obj = {}
@@ -890,6 +899,8 @@ class vasprun:
         lines2 = []
         labels1 = []
         labels2 = []
+        all_y_values = []  # Collect all y-values for ylim determination
+
         for label in plt_obj.keys():
             e = np.reshape(e, [len(e), 1])
             data = np.reshape(plt_obj[label], [len(e), 1])
@@ -898,6 +909,8 @@ class vasprun:
                 data = np.hstack((e, data))
                 data = smear_data(data, smear)
                 data = data[:, 1]
+
+            all_y_values.extend(data.flatten())  # Add data for ylim calculation
 
             ls = '-' if label == 'Total' else '--'
             if label.find('down') > 0:
@@ -931,16 +944,19 @@ class vasprun:
             x_min, x_max = ax.get_xlim()
             if dos_range[0] is not None: x_min = dos_range[0]
             if dos_range[1] is not None: x_max = dos_range[1]
-            ax.set_xlim(x_min, x_max)
+            ax.set_xlim(x_min -1, x_max + 1)
         else:
             ax.set_xlabel("Energy (eV)")
             ax.set_ylabel("DOS")
             ax.set_xlim(xlim)
 
-            # Set ylim if specified
-            y_min, y_max = ylim
-            if y_min is None: y_min = ax.get_ylim()[0]
-            if y_max is None: y_max = ax.get_ylim()[1]
+            # Automatically set ylim based on data range
+            if ylim == [None, None]:  # If no ylim provided
+                y_min, y_max = min(all_y_values) - 1, max(all_y_values) + 1
+            else:  # Use provided limits if specified
+                y_min, y_max = ylim
+                if y_min is None: y_min = min(all_y_values) - 1
+                if y_max is None: y_max = max(all_y_values) + 1
             ax.set_ylim(y_min, y_max)
 
         if filename is None:

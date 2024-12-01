@@ -1,0 +1,61 @@
+2024-12-01 21:56:54,805 [INFO] Директория для графиков подготовлена: /Users/artyombetekhtin/PycharmProjects/All_for_Quants/vasprun-xml/builder/xmls/graphs
+2024-12-01 21:56:54,806 [INFO] Обработка файла: /Users/artyombetekhtin/PycharmProjects/All_for_Quants/vasprun-xml/builder/xmls/vasprun_CA_no_U.xml
+2024-12-01 21:56:55,016 [INFO] Файл: vasprun_CA_no_U.xml_ CA_no_U
+Энергия: -53.11733758
+Энергия на атом: -6.6396671975
+Элементы системы: ['Ni', 'O']
+Состав системы: {'Ni': 4, 'O': 4}
+Значение запрещенной зоны (band gap): 0
+Координаты верхней валентной зоны (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': 1.2431465}
+Координаты нижней проводящей зоны (CBM): {'kpoint': array([0., 0., 0.]), 'value': -0.6587535000000004}
+2024-12-01 21:57:01,722 [INFO] Графики сохранены: /Users/artyombetekhtin/PycharmProjects/All_for_Quants/vasprun-xml/builder/xmls/graphs/DOS_graph_ CA_no_U.png, /Users/artyombetekhtin/PycharmProjects/All_for_Quants/vasprun-xml/builder/xmls/graphs/BAND_graph_ CA_no_U.png, /Users/artyombetekhtin/PycharmProjects/All_for_Quants/vasprun-xml/builder/xmls/graphs/BAND_dos_graph_ CA_no_U.png
+2024-12-01 21:57:01,728 [INFO] Обработка файла: /Users/artyombetekhtin/PycharmProjects/All_for_Quants/vasprun-xml/builder/xmls/vasprun_PE_U.xml
+2024-12-01 21:57:01,969 [INFO] Файл: vasprun_PE_U.xml_ PE_U
+Энергия: -44.2409171
+Энергия на атом: -5.5301146375
+Элементы системы: ['Ni', 'O']
+Состав системы: {'Ni': 4, 'O': 4}
+Значение запрещенной зоны (band gap): 1.8635000000000002
+Координаты верхней валентной зоны (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.06708546000000037}
+Координаты нижней проводящей зоны (CBM): {'kpoint': array([0. , 0.5, 0. ]), 'value': 1.7964145399999998}
+2024-12-01 21:57:08,760 [INFO] Графики сохранены: /Users/artyombetekhtin/PycharmProjects/All_for_Quants/vasprun-xml/builder/xmls/graphs/DOS_graph_ PE_U.png, /Users/artyombetekhtin/PycharmProjects/All_for_Quants/vasprun-xml/builder/xmls/graphs/BAND_graph_ PE_U.png, /Users/artyombetekhtin/PycharmProjects/All_for_Quants/vasprun-xml/builder/xmls/graphs/BAND_dos_graph_ PE_U.png
+2024-12-01 21:57:08,767 [INFO] Обработка файла: /Users/artyombetekhtin/PycharmProjects/All_for_Quants/vasprun-xml/builder/xmls/vasprun_CA_U.xml
+2024-12-01 21:57:08,996 [INFO] Файл: vasprun_CA_U.xml_ CA_U
+Энергия: -46.65381843
+Энергия на атом: -5.83172730375
+Элементы системы: ['Ni', 'O']
+Состав системы: {'Ni': 4, 'O': 4}
+Значение запрещенной зоны (band gap): 1.3413999999999993
+Координаты верхней валентной зоны (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.06807848999999955}
+Координаты нижней проводящей зоны (CBM): {'kpoint': array([0. , 0.5, 0. ]), 'value': 1.2733215099999997}
+2024-12-01 21:57:15,873 [INFO] Графики сохранены: /Users/artyombetekhtin/PycharmProjects/All_for_Quants/vasprun-xml/builder/xmls/graphs/DOS_graph_ CA_U.png, /Users/artyombetekhtin/PycharmProjects/All_for_Quants/vasprun-xml/builder/xmls/graphs/BAND_graph_ CA_U.png, /Users/artyombetekhtin/PycharmProjects/All_for_Quants/vasprun-xml/builder/xmls/graphs/BAND_dos_graph_ CA_U.png
+2024-12-01 21:57:15,881 [INFO] Обработка файла: /Users/artyombetekhtin/PycharmProjects/All_for_Quants/vasprun-xml/builder/xmls/vasprun_SCAN_no_U.xml
+2024-12-01 21:57:16,152 [INFO] Файл: vasprun_SCAN_no_U.xml_--_no_U_ SCAN
+Энергия: -1292.54127418
+Энергия на атом: -161.5676592725
+Элементы системы: ['Ni', 'O']
+Состав системы: {'Ni': 4, 'O': 4}
+Значение запрещенной зоны (band gap): 0
+Координаты верхней валентной зоны (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': 1.2338347}
+Координаты нижней проводящей зоны (CBM): {'kpoint': array([0.   , 0.125, 0.   ]), 'value': -0.5384653000000004}
+2024-12-01 21:57:23,579 [INFO] Графики сохранены: /Users/artyombetekhtin/PycharmProjects/All_for_Quants/vasprun-xml/builder/xmls/graphs/DOS_graph_--_no_U_ SCAN.png, /Users/artyombetekhtin/PycharmProjects/All_for_Quants/vasprun-xml/builder/xmls/graphs/BAND_graph_--_no_U_ SCAN.png, /Users/artyombetekhtin/PycharmProjects/All_for_Quants/vasprun-xml/builder/xmls/graphs/BAND_dos_graph_--_no_U_ SCAN.png
+2024-12-01 21:57:23,588 [INFO] Обработка файла: /Users/artyombetekhtin/PycharmProjects/All_for_Quants/vasprun-xml/builder/xmls/vasprun_SCAN_U.xml
+2024-12-01 21:57:23,914 [INFO] Файл: vasprun_SCAN_U.xml_--_U_ SCAN
+Энергия: -1285.59381228
+Энергия на атом: -160.699226535
+Элементы системы: ['Ni', 'O']
+Состав системы: {'Ni': 4, 'O': 4}
+Значение запрещенной зоны (band gap): 1.0630999999999995
+Координаты верхней валентной зоны (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.07401983999999917}
+Координаты нижней проводящей зоны (CBM): {'kpoint': array([0. , 0.5, 0. ]), 'value': 0.9890801600000003}
+2024-12-01 21:57:31,724 [INFO] Графики сохранены: /Users/artyombetekhtin/PycharmProjects/All_for_Quants/vasprun-xml/builder/xmls/graphs/DOS_graph_--_U_ SCAN.png, /Users/artyombetekhtin/PycharmProjects/All_for_Quants/vasprun-xml/builder/xmls/graphs/BAND_graph_--_U_ SCAN.png, /Users/artyombetekhtin/PycharmProjects/All_for_Quants/vasprun-xml/builder/xmls/graphs/BAND_dos_graph_--_U_ SCAN.png
+2024-12-01 21:57:31,740 [INFO] Обработка файла: /Users/artyombetekhtin/PycharmProjects/All_for_Quants/vasprun-xml/builder/xmls/vasprun_PE_no_U.xml
+2024-12-01 21:57:32,015 [INFO] Файл: vasprun_PE_no_U.xml_ PE_no_U
+Энергия: -49.46806843
+Энергия на атом: -6.18350855375
+Элементы системы: ['Ni', 'O']
+Состав системы: {'Ni': 4, 'O': 4}
+Значение запрещенной зоны (band gap): 0
+Координаты верхней валентной зоны (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': 0.6839379499999998}
+Координаты нижней проводящей зоны (CBM): {'kpoint': array([0.   , 0.375, 0.   ]), 'value': -0.60616205}
+2024-12-01 21:57:39,263 [INFO] Графики сохранены: /Users/artyombetekhtin/PycharmProjects/All_for_Quants/vasprun-xml/builder/xmls/graphs/DOS_graph_ PE_no_U.png, /Users/artyombetekhtin/PycharmProjects/All_for_Quants/vasprun-xml/builder/xmls/graphs/BAND_graph_ PE_no_U.png, /Users/artyombetekhtin/PycharmProjects/All_for_Quants/vasprun-xml/builder/xmls/graphs/BAND_dos_graph_ PE_no_U.png

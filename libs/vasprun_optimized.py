@@ -578,7 +578,9 @@ class vasprun:
         eigens = np.array(self.values['calculation']['eband_eigenvalues'])
         return eigens[:, band, 0] - efermi
 
-    def show_eigenvalues_by_band(self, bands=[0]):
+    def show_eigenvalues_by_band(self, bands=None):
+        if bands is None:
+            bands = [0]
         kpts = self.values['kpoints']['list']
         col_name = {'K-points': kpts}
         for band in bands:
@@ -847,7 +849,7 @@ class vasprun:
         return mydos, labels
 
     def plot_dos(self, ax=None, filename=None, smear=None, flip=False,
-                 style='t', xlim=[None, None], ylim=[None, None], dos_range=[0, None], dpi=1200):
+                 style='t', xlim=None, ylim=None, dos_range=[0, None], dpi=1200):
         """
         plot the DOS
 
@@ -862,7 +864,12 @@ class vasprun:
 
         Returns:
             A figure with band structure
+            :param dos_range:
         """
+        if ylim is None:
+            ylim = [None, None]
+        if xlim is None:
+            xlim = [None, None]
         efermi = self.values['calculation']['efermi']
         tdos = np.array(self.values['calculation']['tdos'][0])
         tdos[:, 0] -= efermi
@@ -966,16 +973,21 @@ class vasprun:
 
     def plot_band_dos(self, filename=None, band_style='normal', dos_style='t+a', smear=None,
                       e_range=[-10, 3], dos_max=None, plim=[0.0, 0.5],
-                      band_labels=None, figsize=(6, 4), dpi=1200):
+                      band_labels=None, figsize=(16, 9), dpi=120):
         """
-        Args:
-            filename (string): the path of figure
-            smear (float): the width of smearing, defult: None
-            styles (string): (`t` or `s` or `t+spd` or ele)
-            e_range (list): the range of energy values on the x-axis, e.g. [-5, 3]
+        Plot band structure and density of states (DOS) with the specified settings.
 
-        Returns:
-            A figure with band structure
+        Args:
+            filename (str): Path to save the plot (optional).
+            band_style (str): Style of band plot.
+            dos_style (str): Style of DOS plot.
+            smear (float): Smearing factor for DOS.
+            e_range (list): Energy range [min, max].
+            dos_max (float): Maximum value for DOS.
+            plim (list): Plot limits for DOS.
+            band_labels (list): Labels for high-symmetry points in band structure.
+            figsize (tuple): Figure size in inches. Default is (16, 9) for 1920x1080 pixels.
+            dpi (int): Dots per inch for the plot resolution. Default is 120 for moderate quality.
         """
 
         fig = plt.figure(figsize=figsize)

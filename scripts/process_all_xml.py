@@ -4,12 +4,12 @@ import logging
 from xml.etree import ElementTree as ET
 from libs.vasprun_optimized import vasprun
 
-# Настройка логгирования
+# Logging configuration
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
     handlers=[
-        logging.FileHandler("../output_analysis/surfaces/1_0_0/graphs/processing_log.txt", mode='w'),
+        logging.FileHandler("/Users/artyombetekhtin/PycharmProjects/NiO_vasp/output_analysis/surfaces/1_0_0/graphs/processing_log.txt", mode='w'),
         logging.StreamHandler()
     ]
 )
@@ -17,17 +17,17 @@ logging.basicConfig(
 
 def prepare_output_directory(output_dir: str):
     """
-    Создаёт или очищает директорию для сохранения графиков.
+    Creates or clears the directory for saving plots.
     """
     if os.path.exists(output_dir):
         shutil.rmtree(output_dir)
     os.makedirs(output_dir)
-    logging.info(f"Директория для графиков подготовлена: {output_dir}")
+    logging.info(f"Output directory prepared: {output_dir}")
 
 
 def parse_filename_suffix(xml_file: str) -> str:
     """
-    Парсит XML-файл и возвращает суффикс для названия файла графика.
+    Parses the XML file and returns a suffix for the plot filenames.
     """
     try:
         tree = ET.parse(xml_file)
@@ -44,42 +44,42 @@ def parse_filename_suffix(xml_file: str) -> str:
 
         return gga_suffix + ldau_suffix + metagga_suffix
     except Exception as e:
-        logging.error(f"Ошибка при парсинге XML-файла {xml_file}: {e}")
+        logging.error(f"Error parsing XML file {xml_file}: {e}")
         return "_unknown"
 
 
 def process_file(filepath: str, output_dir: str):
     """
-    Обрабатывает один файл vasprun.xml и генерирует графики.
+    Processes a single vasprun.xml file and generates plots.
     """
-    logging.info(f"Обработка файла: {filepath}")
+    logging.info(f"Processing file: {filepath}")
 
     try:
         vasp = vasprun(filepath, verbosity=1)
     except Exception as e:
-        logging.error(f"Ошибка при создании экземпляра vasprun для файла {filepath}: {e}")
+        logging.error(f"Error creating vasprun instance for file {filepath}: {e}")
         return
 
     if vasp.error:
-        logging.error(f"Ошибка при разборе файла {filepath}: {vasp.errormsg}")
+        logging.error(f"Error parsing file {filepath}: {vasp.errormsg}")
         return
 
-    # Генерация суффикса для файла
+    # Generate file suffix
     suffix = parse_filename_suffix(filepath)
 
-    # Логгирование данных
+    # Log data
     logging.info(
-        f"Файл: {os.path.basename(filepath)}{suffix}\n"
-        f"Энергия: {vasp.values['calculation']['energy']}\n"
-        f"Энергия на атом: {vasp.values['calculation']['energy_per_atom']}\n"
-        f"Элементы системы: {vasp.values['elements']}\n"
-        f"Состав системы: {vasp.values['composition']}\n"
-        f"Значение запрещенной зоны (band gap): {vasp.values['gap']}\n"
-        f"Координаты верхней валентной зоны (VBM): {vasp.values['vbm']}\n"
-        f"Координаты нижней проводящей зоны (CBM): {vasp.values['cbm']}"
+        f"File: {os.path.basename(filepath)}{suffix}\n"
+        f"Energy: {vasp.values['calculation']['energy']}\n"
+        f"Energy per atom: {vasp.values['calculation']['energy_per_atom']}\n"
+        f"System elements: {vasp.values['elements']}\n"
+        f"System composition: {vasp.values['composition']}\n"
+        f"Band gap: {vasp.values['gap']}\n"
+        f"Valence Band Maximum (VBM): {vasp.values['vbm']}\n"
+        f"Conduction Band Minimum (CBM): {vasp.values['cbm']}"
     )
 
-    # Построение графиков
+    # Generate plots
     try:
         dos_path = os.path.join(output_dir, f"DOS_graph{suffix}.png")
         band_path = os.path.join(output_dir, f"BAND_graph{suffix}.png")
@@ -88,18 +88,18 @@ def process_file(filepath: str, output_dir: str):
         vasp.plot_dos(filename=dos_path)
         vasp.plot_band(filename=band_path)
         vasp.plot_band_dos(filename=band_dos_path)
-        logging.info(f"Графики сохранены: {dos_path}, {band_path}, {band_dos_path}")
+        logging.info(f"Plots saved: {dos_path}, {band_path}, {band_dos_path}")
     except Exception as e:
-        logging.error(f"Ошибка при построении графиков для файла {filepath}: {e}")
+        logging.error(f"Error generating plots for file {filepath}: {e}")
 
 
 def process_xml_files(input_dir: str, output_dir: str):
     """
-    Обрабатывает все XML-файлы в директории.
+    Processes all XML files in the directory.
     """
     xml_files = [f for f in os.listdir(input_dir) if f.endswith('.xml')]
     if not xml_files:
-        logging.warning("В директории нет XML-файлов для обработки.")
+        logging.warning("No XML files found in the directory for processing.")
         return
 
     for filename in xml_files:
@@ -108,10 +108,10 @@ def process_xml_files(input_dir: str, output_dir: str):
 
 
 if __name__ == "__main__":
-    # Путь к директории с XML-файлами
-    input_directory = '/Users/artyombetekhtin/PycharmProjects/NiO_vasp/vasprun-xml/builder/xmls'
-    output_directory = os.path.join(input_directory, 'graphs')
+    # Path to the directory with XML files
+    input_directory = '/Users/artyombetekhtin/PycharmProjects/NiO_vasp/output_analysis/surfaces/1_0_0/xmls'
+    output_directory = '/Users/artyombetekhtin/PycharmProjects/NiO_vasp/output_analysis/surfaces/1_0_0/graphs'
 
-    # Подготовка директории и запуск обработки
+    # Prepare the output directory and start processing
     prepare_output_directory(output_directory)
     process_xml_files(input_directory, output_directory)

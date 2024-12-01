@@ -1,52 +1,66 @@
+import os
 import pprint
 from libs.vasprun_optimized import vasprun
 
-# Основная функция
-def main(vasprun_file, verbosity=1):
+# Main function
+def main(vasprun_file, output_dir, verbosity=1):
     try:
-        # Создание экземпляра класса vasprun
+        # Create an instance of the vasprun class
         vasp = vasprun(vasprun_file, verbosity=verbosity)
 
-        # Проверка на ошибки
+        # Check for errors
         if vasp.error:
-            raise ValueError(f"Ошибка при разборе файла: {vasp.errormsg}")
+            raise ValueError(f"Error parsing file: {vasp.errormsg}")
 
-        # Вывод основных данных
-        print("Данные VASP:")
+        # Print main data
+        print("VASP Data:")
         pprint.pprint({
-            "Энергия": vasp.values['calculation']['energy'],
-            "Энергия на атом": vasp.values['calculation']['energy_per_atom'],
-            "Финальные позиции атомов": vasp.values['finalpos']['positions'],
-            "Элементы системы": vasp.values['elements'],
-            "Состав системы": vasp.values['composition'],
-            "Значение запрещенной зоны (band gap)": vasp.values['gap'],
-            "Координаты верхней валентной зоны (VBM)": vasp.values['vbm'],
-            "Координаты нижней проводящей зоны (CBM)": vasp.values['cbm']
+            "Energy": vasp.values['calculation']['energy'],
+            "Energy per atom": vasp.values['calculation']['energy_per_atom'],
+            "Final atomic positions": vasp.values['finalpos']['positions'],
+            "Elements in the system": vasp.values['elements'],
+            "System composition": vasp.values['composition'],
+            "Band gap value": vasp.values['gap'],
+            "Valence Band Maximum (VBM)": vasp.values['vbm'],
+            "Conduction Band Minimum (CBM)": vasp.values['cbm']
         })
 
-        # Построение графиков
-        generate_plots(vasp)
+        # Generate plots
+        generate_plots(vasp, output_dir)
 
     except Exception as e:
-        print(f"Произошла ошибка: {e}")
+        print(f"An error occurred: {e}")
 
 
-# Функция для построения графиков
-def generate_plots(vasp):
+# Function to generate plots
+def generate_plots(vasp, output_dir):
     try:
-        print("Создание графиков...")
-        vasp.plot_dos(filename="DOS_graph")
-        print("График DOS сохранён как 'DOS_graph.png'")
-        vasp.plot_band(filename="BAND_graph")
-        print("График BAND сохранён как 'BAND_graph.png'")
-        vasp.plot_band_dos(filename="BAND_dos_graph")
-        print("График BAND+DOS сохранён как 'BAND_dos_graph.png'")
+        print("Generating plots...")
+
+        # Check if the directory exists, and create it if necessary
+        if not os.path.exists(output_dir):
+            os.makedirs(output_dir)
+
+        # Save plots in the specified directory
+        dos_filename = os.path.join(output_dir, "DOS_graph.png")
+        vasp.plot_dos(filename=dos_filename)
+        print(f"DOS plot saved as '{dos_filename}'")
+
+        band_filename = os.path.join(output_dir, "BAND_graph.png")
+        vasp.plot_band(filename=band_filename)
+        print(f"BAND plot saved as '{band_filename}'")
+
+        band_dos_filename = os.path.join(output_dir, "BAND_dos_graph.png")
+        vasp.plot_band_dos(filename=band_dos_filename)
+        print(f"BAND+DOS plot saved as '{band_dos_filename}'")
+
     except Exception as e:
-        print(f"Ошибка при создании графиков: {e}")
+        print(f"Error while generating plots: {e}")
 
 
-# Точка входа
+# Entry point
 if __name__ == "__main__":
-    vasprun_file = '../test_cases/vasprun_CA_no_U.xml'  # Укажите путь к вашему vasprun.xml
-    verbosity_level = 1  # Уровень детализации
-    main(vasprun_file, verbosity=verbosity_level)
+    vasprun_file = '../test_cases/vasprun_CA_no_U.xml'  # Specify the path to your vasprun.xml
+    output_directory = '/Users/artyombetekhtin/PycharmProjects/NiO_vasp/test_cases'  # Directory for saving plots
+    verbosity_level = 1  # Verbosity level
+    main(vasprun_file, output_directory, verbosity=verbosity_level)

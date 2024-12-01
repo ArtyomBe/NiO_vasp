@@ -8,7 +8,7 @@ from vasprun_builder.vasper_max_corrected import vasprun
 #from vasprun_builder import IR
 
 # Создание экземпляра класса vasprun
-vasp = vasprun('vasprun.xml', verbosity=1)
+vasp = vasprun('vasprun_CA_U.xml', verbosity=1)
 
 # Проверка на наличие ошибок
 if vasp.error:

@@ -713,7 +713,7 @@ class vasprun:
         self.values['band_paths'] = band_paths
         self.values['band_points'] = band_points
 
-    def plot_band(self, ax=None, filename=None, style='normal', ylim=[-20, 3],
+    def plot_band(self, ax=None, filename=None, style='normal', ylim=[-25, 10],
                   xlim=None, plim=[0.0, 0.5], labels=None, saveBands=False, dpi=1200):
         """
         plot the bandstructure

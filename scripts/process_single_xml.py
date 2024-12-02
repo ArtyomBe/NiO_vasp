@@ -43,7 +43,7 @@ def generate_plots(vasp, output_dir):
 
         # Save plots in the specified directory
         dos_filename = os.path.join(output_dir, "DOS_graph.png")
-        vasp.plot_dos(filename=dos_filename)
+        vasp.plot_dos(filename=dos_filename, style="t+spd")
         print(f"DOS plot saved as '{dos_filename}'")
 
         band_filename = os.path.join(output_dir, "BAND_graph.png")

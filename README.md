@@ -5,6 +5,7 @@ This repository is dedicated to advanced modeling and analysis of Nickel Oxide (
 
 The goal is to provide computational chemists and materials scientists with automated, reproducible workflows and tools for analyzing NiO surfaces at the atomic scale.
 
+![The quantum chemical model of NiO: visualization of the structure, molecular orbitals and simulation data performed in VASP.](./documentation/NiO_visualisation.png)
 ---
 
 ### About the Author
@@ -13,7 +14,10 @@ This project is developed and maintained by **Artyom Betekhtin**, a computationa
 
 I am also a member of **[Group 24](https://theorchem.ru/wiki/Группа_теоретической_химии_(№24)_ИОХ_РАН) at ZIOC RAS**, contributing to projects on surface chemistry and catalyst design. My work combines theoretical and computational chemistry to explore material behavior at the atomic level.  
 
----
+How you can contact with me:
+- [ORCID identifier](https://orcid.org/0009-0005-6805-9492)
+- [Email me 1](mailto:work.betekhtin@gmail.com)
+- [Email me 2](mailto:a.betekhtin@alumni.nsu.ru)
 
 ### Features
 - **VASP Input/Output Automation**: Scripts for generating and managing VASP input files (POSCAR, INCAR, KPOINTS, etc.) and parsing output files (OUTCAR, vasprun.xml).

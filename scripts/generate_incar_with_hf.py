@@ -2,11 +2,11 @@ import os
 import shutil
 
 # Основной путь для сохранения файлов
-base_path = "/Users/artyombetekhtin/Desktop/Кванты/NiO/HF_percentage_study/INPUTS"
-source_path = "//vasprun-xml/builder"
+base_path = "/Users/artyombetekhtin/Desktop/Кванты/NiO/HF_percentage_study/INPUTS/"
+source_path = "/Users/artyombetekhtin/PycharmProjects/NiO_vasp/test_cases"
 
 # Шаблон содержимого файла INCAR
-base_content = """SYSTEM   = NiO
+base_content = """SYSTEM   = percentage_study_NiO
 # Начальные условия
 ISTART   = 0            # Начать расчет с нуля
 # Магнитные свойства
@@ -14,7 +14,7 @@ ISPIN    = 2            # Спиновый расчет
 MAGMOM = 2.0 -2.0 2.0 -2.0 4*0.0
 # Энергетические параметры
 ENMAX    = 250.0        # Энергия отсечки для плоскостных волн
-EDIFF    = 1E-4         # Критерий сходимости по энергии (более строгий для HSE)
+EDIFF    = 1E-3         # Критерий сходимости по энергии (более строгий для HSE)
 # Размывание для изоляторов
 ISMEAR   = -5           # Метод размывания Тетраэдра
 SIGMA    = 0.1          # Ширина размывания (для HSE не влияет на результат)
@@ -31,19 +31,18 @@ LMAXMIX  = 4            # Максимальный L для смешивания
 IBRION   = 2            # Конъюгированный градиент для оптимизации геометрии
 # Учет функционала HSE06
 LHFCALC  = .TRUE.       # Включить гибридный функционал
-HFSCREEN = 0.2          # Радиус экранирования для HSE06 (0.2 для HSE06)
 AEXX     = {aexx:.2f}         # Процент обмена Хартри-Фока
 # Учет параметра Хаббарда
 LDAU      = .TRUE.      # Включить DFT+U
 LDAUTYPE  = 2           # Тип схемы DFT+U (с использованием U и J)
 LDAUL     = 2 -1        # Значение L (2 = d-орбитали для Ni, -1 = отключено для O)
-LDAUU     = 6.30 0.00   # Значение U (8.0 эВ для Ni, 0.0 для O)
-LDAUJ     = 1.00 0.00   # Значение J (0.95 эВ для Ni, 0.0 для O)
+LDAUU     = 6.30 0.00   # Значение U (6.30 эВ для Ni, 0.0 для O)
+LDAUJ     = 1.00 0.00   # Значение J (1.00 эВ для Ni, 0.0 для O)
 LDAUPRINT = 2           # Полный вывод данных DFT+U
 """
 
 # Генерация файлов с разными значениями AEXX
-for i in range(1, 101):
+for i in range(0, 101):
     aexx = i / 100  # Значение AEXX (в долях от 0.01 до 1.00)
     folder_name = f"{i}_percent"  # Имя папки для текущего процента
     folder_path = os.path.join(base_path, folder_name)  # Полный путь к папке

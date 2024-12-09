@@ -1,82 +1,87 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from scipy.optimize import fsolve
 
-# Жёсткое уравнение
-def stiff_f(x, y):
-    """Правая часть уравнения y'(x) = -1000y + 3000 - 2000e^(-x)."""
-    return -1000 * y + 3000 - 2000 * np.exp(-x)
+# Определение параметров
+T_values = np.linspace(0, 1, 200)  # Температура от 0 до 1
+tau_values = np.linspace(0.1, 2, 200)  # Напряжение от 0.1 до 2
+T_grid, tau_grid = np.meshgrid(T_values, tau_values)
 
-# Аналитическое решение
-def stiff_analytical_solution(x):
-    """Аналитическое решение y(x) = 3 - 0.998e^(-1000x) - 2.002e^(-x)."""
-    return 3 - 0.998 * np.exp(-1000 * x) - 2.002 * np.exp(-x)
 
-# Метод Эйлера
-def euler_method(f, x0, y0, x_end, h):
-    x = np.arange(x0, x_end + h, h)
-    y = np.zeros(len(x))
-    y[0] = y0
-    for i in range(1, len(x)):
-        y[i] = y[i - 1] + h * f(x[i - 1], y[i - 1])
-    return x, y
+# Функция для вычисления параметра γ
+def calculate_gamma(T, tau):
+    alpha = 0.5 * (1 - 1 / tau)  # Вычисляем α
+    beta = 0.5 - T  # Вычисляем β
+    if beta != 0:
+        return alpha / (8 * beta)
+    else:
+        return np.inf  # Если β = 0, γ → ∞
 
-# Метод Рунге-Кутты 4-го порядка
-def runge_kutta_method(f, x0, y0, x_end, h):
-    x = np.arange(x0, x_end + h, h)
-    y = np.zeros(len(x))
-    y[0] = y0
-    for i in range(1, len(x)):
-        k1 = h * f(x[i - 1], y[i - 1])
-        k2 = h * f(x[i - 1] + h / 2, y[i - 1] + k1 / 2)
-        k3 = h * f(x[i - 1] + h / 2, y[i - 1] + k2 / 2)
-        k4 = h * f(x[i - 1] + h, y[i - 1] + k3)
-        y[i] = y[i - 1] + (k1 + 2 * k2 + 2 * k3 + k4) / 6
-    return x, y
 
-# Метод Адамса
-def adams_method(f, x0, y0, x_end, h):
-    x = np.arange(x0, x_end + h, h)
-    y = np.zeros(len(x))
-    # Начальные значения методом Рунге-Кутты 4-го порядка
-    y[0] = y0
-    for i in range(3):
-        k1 = h * f(x[i], y[i])
-        k2 = h * f(x[i] + h / 2, y[i] + k1 / 2)
-        k3 = h * f(x[i] + h / 2, y[i] + k2 / 2)
-        k4 = h * f(x[i] + h, y[i] + k3)
-        y[i + 1] = y[i] + (k1 + 2 * k2 + 2 * k3 + k4) / 6
-    # Метод Адамса
-    for i in range(3, len(x) - 1):
-        y_pred = y[i] + h / 24 * (55 * f(x[i], y[i]) - 59 * f(x[i - 1], y[i - 1]) +
-                                  37 * f(x[i - 2], y[i - 2]) - 9 * f(x[i - 3], y[i - 3]))
-        y[i + 1] = y[i] + h / 24 * (9 * f(x[i + 1], y_pred) + 19 * f(x[i], y[i]) -
-                                    5 * f(x[i - 1], y[i - 1]) + f(x[i - 2], y[i - 2]))
-    return x, y
+# Функция для решения кубического уравнения
+def cubic_eq(x, gamma):
+    return 2 * x ** 3 - x - gamma
 
-# Параметры задачи
-x0 = 0
-y0 = 0
-x_end = 0.005  # Для жёсткости выбираем очень маленький интервал
-h_euler = 0.0001  # Шаг для метода Эйлера
-h_rk = 0.001  # Шаг для метода Рунге-Кутты
-h_adams = 0.0001  # Шаг для метода Адамса
 
-# Решение с разными методами
-x_euler, y_euler = euler_method(stiff_f, x0, y0, x_end, h_euler)
-x_rk, y_rk = runge_kutta_method(stiff_f, x0, y0, x_end, h_rk)
-x_adams, y_adams = adams_method(stiff_f, x0, y0, x_end, h_adams)
-x_exact = np.linspace(x0, x_end, 1000)
-y_exact = stiff_analytical_solution(x_exact)
+# Определение фаз
+phase = np.zeros_like(T_grid)
 
-# Построение графиков
-plt.figure(figsize=(12, 6))
-plt.plot(x_exact, y_exact, label="Аналитическое решение", color="black", linewidth=2)
-plt.plot(x_euler, y_euler, label="Метод Эйлера", linestyle="--", color="red")
-plt.plot(x_rk, y_rk, label="Метод Рунге-Кутты 4-го порядка (h=0.001)", linestyle="--", color="blue")
-plt.plot(x_adams, y_adams, label="Метод Адамса", linestyle="-.", color="green")
-plt.title("Сравнение методов решения жесткого ОДУ с разными шагами")
-plt.xlabel("x")
-plt.ylabel("y")
-plt.legend()
-plt.grid()
+for i in range(T_grid.shape[0]):
+    for j in range(T_grid.shape[1]):
+        T = T_grid[i, j]
+        tau = tau_grid[i, j]
+        gamma = calculate_gamma(T, tau)
+
+        # Решение уравнения
+        guesses = [-1, 0, 1]  # Начальные приближения
+        roots = []
+        for guess in guesses:
+            root, info, ier, msg = fsolve(cubic_eq, guess, args=(gamma,), full_output=True)
+            if ier == 1 and np.isreal(root):
+                x = np.real(root[0])
+                if -1 <= x <= 1:  # Только физически допустимые корни
+                    roots.append(x)
+        roots = np.unique(np.round(roots, 5))  # Убираем дубли
+        num_roots = len(roots)
+
+        # Классификация фаз
+        if num_roots == 1:
+            phase[i, j] = 1  # Фаза I
+        elif num_roots == 3:
+            phase[i, j] = 2  # Фаза II
+        else:
+            phase[i, j] = 0  # Переходная область
+
+# Линии фазовых переходов
+gamma_c = np.sqrt(2 / 27)
+alpha_c = 8 * (0.5 - T_values) * gamma_c
+tau_line_2nd = 1 / (1 - 2 * alpha_c)  # Линия второго рода
+
+alpha_c = 8 * (0.5 - T_values) * (-gamma_c)
+tau_line_1st = 1 / (1 - 2 * alpha_c)  # Линия первого рода
+
+# Построение диаграммы
+# Исправление цветовой шкалы для фаз
+plt.figure(figsize=(10, 7))
+cmap = plt.get_cmap('coolwarm', 3)
+contour = plt.contourf(T_grid, tau_grid, phase, levels=[-0.5, 0.5, 1.5, 2.5], cmap=cmap, alpha=0.8)
+
+# Линии фазовых переходов
+plt.plot(T_values, tau_line_2nd, color='blue', linestyle='--', linewidth=2, label='Линия второго рода')
+plt.plot(T_values, tau_line_1st, color='red', linestyle='-.', linewidth=2, label='Линия первого рода')
+
+# Настройки графика
+plt.xlim(0, 1)
+plt.ylim(0, 2)
+plt.xlabel('Температура $T$', fontsize=12)
+plt.ylabel('Механическое напряжение $\\tau$', fontsize=12)
+plt.title('Фазовая диаграмма магнитной наночастицы', fontsize=14)
+
+# Исправление цветовой шкалы
+cbar = plt.colorbar(contour, label='Фаза')
+cbar.set_ticks([0, 1, 2])
+cbar.set_ticklabels(['Переходная', 'Фаза I', 'Фаза II'])
+
+plt.legend(loc='upper right')
+plt.grid(alpha=0.3)
 plt.show()

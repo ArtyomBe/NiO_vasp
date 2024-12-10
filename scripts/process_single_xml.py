@@ -60,7 +60,7 @@ def generate_plots(vasp, output_dir):
 
 # Entry point
 if __name__ == "__main__":
-    vasprun_file = '../test_cases/vasprun4.xml'  # Specify the path to your vasprun.xml
+    vasprun_file = '../test_cases/vasprun_CA_U.xml'  # Specify the path to your vasprun.xml
     output_directory = '/Users/artyombetekhtin/PycharmProjects/NiO_vasp/test_cases'  # Directory for saving plots
     verbosity_level = 1  # Verbosity level
     main(vasprun_file, output_directory, verbosity=verbosity_level)

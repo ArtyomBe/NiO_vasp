@@ -1,6 +1,5 @@
 #!/usr/bin/env  python
 # encoding: utf-8
-from vasprun.version import __version__
 from lxml import etree
 import numpy as np
 from pprint import pprint

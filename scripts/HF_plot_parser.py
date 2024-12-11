@@ -58,6 +58,7 @@ plt.xlabel('AEXX (%)')
 plt.ylabel('Energy (eV)')
 plt.grid(True)
 plt.legend()
+plt.savefig('/Users/artyombetekhtin/PycharmProjects/NiO_vasp/output_analysis/HF_analysis/graphs/Energy_vs_AEXX.png', dpi=1200)
 plt.show()
 
 # Plot Band Gap vs AEXX
@@ -68,4 +69,5 @@ plt.xlabel('AEXX (%)')
 plt.ylabel('Band Gap (eV)')
 plt.grid(True)
 plt.legend()
+plt.savefig('/Users/artyombetekhtin/PycharmProjects/NiO_vasp/output_analysis/HF_analysis/graphs/BandGap_vs_AEXX.png', dpi=1200)
 plt.show()

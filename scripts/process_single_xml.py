@@ -1,6 +1,27 @@
 import os
 import pprint
 from libs.vasprun_optimized import vasprun
+"""
+This code performs the following actions:
+
+1. Analyzes the VASP xml file (vasprun.xml) using the specialized library `vasprun_optimized'. 
+   The main task is to extract data from a file, such as:
+   - Total energy of the system and energy per atom.
+   - Final atomic positions.
+   - The composition of the system (elements and their proportion).
+   - The value of the energy gap (Band Gap), the position of the VBM (valence band) and CBM (conduction band).
+
+2. Displays the basic data extracted from vasprun.xml, in a convenient form using the `pprint` library.
+
+3. Generates and saves the following graphs in the specified directory:
+   - State Density Graph (DOS).
+   - A graph of the BAND structure.
+   - Combined graph of the band structure and density of states (BAND+DOS).
+
+4. Checks for errors when parsing the file and generating graphs, and also creates an output directory if it is missing.
+
+The code is designed to analyze a single xml file and visualize the results, which makes it convenient to interpret VASP calculation data.
+"""
 
 # Main function
 def main(vasprun_file, output_dir, verbosity=1):

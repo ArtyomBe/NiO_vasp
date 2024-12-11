@@ -4,6 +4,39 @@ import logging
 from xml.etree import ElementTree as ET
 from libs.vasprun_optimized import vasprun
 import matplotlib.pyplot as plt
+"""
+This code processes all XML files (vasprun.xml) in the specified directory and performs the following actions:
+
+1. **Preparing the output directory**:
+   - Deletes old data if the directory already exists.
+   - Creates a clean directory for saving graphs and logs.
+
+2. **Logging**:
+   - Configures logging by writing the execution process to a file `processing_log.txt ` in the output directory.
+   - Logs include information about successful processing or errors.
+
+3. **XML File Parsing**:
+     - Extracts key information from each XML file:
+     - The energy of the system and the energy per atom.
+     - The composition of the system (elements and their proportion).
+     - The value of the energy gap (Band Gap), the position of the VBM (valence band) and CBM (conduction band).
+     - Additional parameters such as GGA, LDAU, METAGGA, and AEXX, which are added as suffixes to the names of graph files.
+
+4. **Graph generation**:
+   - Creates and saves three graphs for each XML file:
+     - State Density Graph (DOS).
+     - A graph of the band structure.
+     - Combined graph of the band structure and density of states (BAND+DOS).
+   - Graphs are saved with unique names that include calculation parameters (for example, `GGA`, `LDAU`, `AEXX').
+
+5. **Error Handling**:
+    - Logs errors that occur when parsing XML files or generating graphs, without stopping processing other files.
+
+6. **Running the program**:
+    - Processes all XML files in the specified directory `input_directory` and saves the results (graphs and logs) to `output_directory'.
+
+The code is designed for automated analysis of VASP output data and visualization of key system parameters.
+"""
 
 
 def setup_logging(output_dir: str):

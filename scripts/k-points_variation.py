@@ -1,4 +1,18 @@
 import matplotlib.pyplot as plt
+"""
+This code builds three graphs to analyze the effect of the number of K-POINTS on various system parameters:
+
+1. "Band Gap Variation with K-POINTS": shows the dependence of the energy gap (Band Gap) depends on the number of K-POINTS. 
+   The graph helps to understand how the Band Gap changes when the Brillouin point grid varies.
+
+2. "Energy Variation with K-POINTS": demonstrates the change in the energy of the system depending on the number of K-POINTS.
+   This graph is useful for evaluating the energy stability of calculations with increasing accuracy.
+
+3. "Time Consumption with K-POINTS": Displays the time spent on calculations (in seconds) when the number of K-POINTS changes.
+   The graph gives an idea of the increase in computational costs with increasing grid density.
+
+All graphs have clear axis signatures, legends and a grid for easy analysis.
+"""
 
 # Data
 x_points = [2, 3, 4]

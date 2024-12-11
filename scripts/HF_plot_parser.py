@@ -1,6 +1,12 @@
 import re
 import matplotlib.pyplot as plt
 
+"""
+This script is designed to analyze data related to the AEXX parameter, extract energy and Band Gap from a log file,
+sort the data and save it to a file for further analysis.  Two graphs are also plotted: the dependence of energy and 
+the band gap on AEXX.
+"""
+
 log_path = '/Users/artyombetekhtin/PycharmProjects/NiO_vasp/output_analysis/HF_analysis/graphs/processing_log.txt'
 output_path = '/Users/artyombetekhtin/PycharmProjects/NiO_vasp/output_analysis/HF_analysis/graphs/HF_coordinates.txt'
 

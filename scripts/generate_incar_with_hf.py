@@ -42,23 +42,34 @@ LDAUPRINT = 2           # Полный вывод данных DFT+U
 """
 
 # Генерация файлов с разными значениями AEXX
-for i in range(0, 101):
-    aexx = i / 100  # Значение AEXX (в долях от 0.01 до 1.00)
-    folder_name = f"{i}_percent"  # Имя папки для текущего процента
-    folder_path = os.path.join(base_path, folder_name)  # Полный путь к папке
+try:
+    for i in range(0, 101):
+        aexx = i / 100  # Значение AEXX (в долях от 0.01 до 1.00)
+        folder_name = f"{i}_percent"  # Имя папки для текущего процента
+        folder_path = os.path.join(base_path, folder_name)  # Полный путь к папке
 
-    # Создаем папку, если она не существует
-    os.makedirs(folder_path, exist_ok=True)
+        # Создаем папку, если она не существует
+        os.makedirs(folder_path, exist_ok=True)
 
-    # Сохраняем файл INCAR
-    incar_path = os.path.join(folder_path, "INCAR")
-    with open(incar_path, "w") as file:
-        file.write(base_content.format(aexx=aexx))
+        # Сохраняем файл INCAR
+        incar_path = os.path.join(folder_path, "INCAR")
+        with open(incar_path, "w") as file:
+            file.write(base_content.format(aexx=aexx))
 
-    # Копируем дополнительные файлы
-    for filename in ["KPOINTS", "POTCAR", "POSCAR", "run_vaspSW.sh"]:
-        source_file = os.path.join(source_path, filename)
-        destination_file = os.path.join(folder_path, filename)
-        shutil.copy(source_file, destination_file)
+        # Копируем дополнительные файлы
+        for filename in ["KPOINTS", "POTCAR", "POSCAR", "run_vaspSW.sh"]:
+            source_file = os.path.join(source_path, filename)
+            destination_file = os.path.join(folder_path, filename)
 
-print("Все файлы успешно созданы и скопированы!")
+            # Проверяем, существует ли исходный файл
+            if not os.path.exists(source_file):
+                raise FileNotFoundError(f"Source file {source_file} does not exist.")
+
+            shutil.copy(source_file, destination_file)
+
+    print("Все файлы успешно созданы и скопированы!")
+
+except FileNotFoundError as fnf:
+    print(f"Error: {fnf}")
+except Exception as e:
+    print(f"An unexpected error occurred: {e}")

@@ -10,7 +10,7 @@ states (DOS), adsorption properties, and thermodynamic properties.
 The goal is to provide computational chemists and materials scientists with automated, reproducible workflows and tools
 for analyzing NiO surfaces at the atomic scale.
 
-![The quantum chemical model of NiO: visualization of the structure, molecular orbitals and simulation data performed in VASP.](./src/documentation/NiO_visualisation.png)
+![The quantum chemical model of NiO: visualization of the structure, molecular orbitals and simulation data performed in VASP.](/documentation/NiO_visualisation.png)
 ---
 
 ### About the Author

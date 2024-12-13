@@ -1,14 +1,11 @@
 import os
 import shutil
+import logging
 
 from utils.utils import get_project_path
 
-# Основной путь для сохранения файлов
-base_path = "/Users/artyombetekhtin/Desktop/Кванты/NiO/HF_percentage_study/INPUTS/"
-source_path = os.path.join(get_project_path(), "test_cases")
-
 # Шаблон содержимого файла INCAR
-base_content = """SYSTEM   = percentage_study_NiO
+BASE_CONTENT = """SYSTEM   = percentage_study_NiO
 # Начальные условия
 ISTART   = 0            # Начать расчет с нуля
 # Магнитные свойства
@@ -43,35 +40,78 @@ LDAUJ     = 1.00 0.00   # Значение J (1.00 эВ для Ni, 0.0 для O)
 LDAUPRINT = 2           # Полный вывод данных DFT+U
 """
 
-# Генерация файлов с разными значениями AEXX
-try:
-    for i in range(0, 101):
-        aexx = i / 100  # Значение AEXX (в долях от 0.01 до 1.00)
-        folder_name = f"{i}_percent"  # Имя папки для текущего процента
-        folder_path = os.path.join(base_path, folder_name)  # Полный путь к папке
+def setup_logging():
+    """
+    Configures logging for the script.
+    """
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s [%(levelname)s] %(message)s",
+        handlers=[logging.StreamHandler()]
+    )
 
-        # Создаем папку, если она не существует
-        os.makedirs(folder_path, exist_ok=True)
 
-        # Сохраняем файл INCAR
-        incar_path = os.path.join(folder_path, "INCAR")
-        with open(incar_path, "w") as file:
-            file.write(base_content.format(aexx=aexx))
+def create_incar_file(folder_path, aexx):
+    """
+    Creates an INCAR file with the specified AEXX value.
+    """
+    incar_path = os.path.join(folder_path, "INCAR")
+    with open(incar_path, "w") as file:
+        file.write(BASE_CONTENT.format(aexx=aexx))
+    logging.info(f"INCAR file created at {incar_path}")
 
-        # Копируем дополнительные файлы
-        for filename in ["KPOINTS", "POTCAR", "POSCAR", "run_vaspSW.sh"]:
-            source_file = os.path.join(source_path, filename)
-            destination_file = os.path.join(folder_path, filename)
 
-            # Проверяем, существует ли исходный файл
-            if not os.path.exists(source_file):
-                raise FileNotFoundError(f"Source file {source_file} does not exist.")
+def copy_additional_files(source_path, destination_path):
+    """
+    Copies additional required files (KPOINTS, POTCAR, POSCAR, run_vaspSW.sh) to the destination folder.
+    """
+    for filename in ["KPOINTS", "POTCAR", "POSCAR", "run_vaspSW.sh"]:
+        source_file = os.path.join(source_path, filename)
+        destination_file = os.path.join(destination_path, filename)
 
-            shutil.copy(source_file, destination_file)
+        if not os.path.exists(source_file):
+            raise FileNotFoundError(f"Source file {source_file} does not exist.")
 
-    print("Все файлы успешно созданы и скопированы!")
+        shutil.copy(source_file, destination_file)
+        logging.info(f"Copied {source_file} to {destination_file}")
 
-except FileNotFoundError as fnf:
-    print(f"Error: {fnf}")
-except Exception as e:
-    print(f"An unexpected error occurred: {e}")
+
+def generate_folders(base_path, source_path):
+    """
+    Generates folders and files for different AEXX values.
+    """
+    try:
+        for i in range(0, 101):
+            aexx = i / 100  # Значение AEXX (в долях от 0.00 до 1.00)
+            folder_name = f"{i}_percent"  # Имя папки для текущего процента
+            folder_path = os.path.join(base_path, folder_name)  # Полный путь к папке
+
+            # Создаем папку, если она не существует
+            os.makedirs(folder_path, exist_ok=True)
+            logging.info(f"Folder created: {folder_path}")
+
+            # Создаем файл INCAR
+            create_incar_file(folder_path, aexx)
+
+            # Копируем дополнительные файлы
+            copy_additional_files(source_path, folder_path)
+
+        logging.info("All files and folders successfully created!")
+
+    except FileNotFoundError as fnf_error:
+        logging.error(fnf_error)
+    except Exception as e:
+        logging.error(f"An unexpected error occurred: {e}")
+
+
+def main():
+    setup_logging()
+
+    base_path = "/Users/artyombetekhtin/Desktop/Кванты/NiO/HF_percentage_study/INPUTS/"
+    source_path = os.path.join(get_project_path(), "test_cases")
+
+    generate_folders(base_path, source_path)
+
+
+if __name__ == "__main__":
+    main()

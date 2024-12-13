@@ -1,91 +1,124 @@
 import os
+import logging
 import pprint
 
 from libs.vasprun_optimized import vasprun
 from utils.utils import get_project_path
 
 """
-This code performs the following actions:
-
-1. Analyzes the VASP xml file (vasprun.xml) using the specialized library `vasprun_optimized'. 
-   The main task is to extract data from a file, such as:
-   - Total energy of the system and energy per atom.
-   - Final atomic positions.
-   - The composition of the system (elements and their proportion).
-   - The value of the energy gap (Band Gap), the position of the VBM (valence band) and CBM (conduction band).
-
-2. Displays the basic data extracted from vasprun.xml, in a convenient form using the `pprint` library.
-
-3. Generates and saves the following graphs in the specified directory:
-   - State Density Graph (DOS).
-   - A graph of the BAND structure.
-   - Combined graph of the band structure and density of states (BAND+DOS).
-
-4. Checks for errors when parsing the file and generating graphs, and also creates an output directory if it is missing.
-
-The code is designed to analyze a single xml file and visualize the results, which makes it convenient to interpret VASP calculation data.
+This script processes VASP calculation results and generates plots for visualization.
+It extracts key data from the VASP output (vasprun.xml) and handles errors gracefully.
 """
 
 
-# Main function
-def main(vasprun_file, output_dir, verbosity=1):
+def setup_logging():
+    """
+    Configures logging for the script.
+    """
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s [%(levelname)s] %(message)s",
+        handlers=[
+            logging.StreamHandler(),
+            logging.FileHandler("vasprun_analysis.log", mode='w')
+        ]
+    )
+
+
+def validate_paths(vasprun_file, output_dir):
+    """
+    Validates the input file and output directory paths.
+    """
+    if not os.path.exists(vasprun_file):
+        raise FileNotFoundError(f"Vasprun file '{vasprun_file}' not found.")
+    if not os.path.isdir(output_dir):
+        os.makedirs(output_dir)
+        logging.info(f"Created output directory: {output_dir}")
+
+
+def extract_vasp_data(vasprun_file, verbosity=1):
+    """
+    Extracts key data from the VASP output using the vasprun_optimized library.
+    """
+    logging.info(f"Processing VASP file: {vasprun_file}")
+    vasp = vasprun(vasprun_file, verbosity=verbosity)
+
+    if vasp.error:
+        raise ValueError(f"Error parsing file '{vasprun_file}': {vasp.errormsg}")
+
+    data = {
+        "Energy": vasp.values['calculation']['energy'],
+        "Energy per atom": vasp.values['calculation']['energy_per_atom'],
+        "Final atomic positions": vasp.values['finalpos']['positions'],
+        "Elements in the system": vasp.values['elements'],
+        "System composition": vasp.values['composition'],
+        "Band gap value": vasp.values['gap'],
+        "Valence Band Maximum (VBM)": vasp.values['vbm'],
+        "Conduction Band Minimum (CBM)": vasp.values['cbm']
+    }
+    return data, vasp
+
+
+def display_data(data):
+    """
+    Prints extracted data in a human-readable format.
+    """
+    logging.info("Extracted VASP data:")
+    pprint.pprint(data)
+
+
+def generate_plots(vasp, output_dir):
+    """
+    Generates and saves DOS, BAND, and BAND+DOS plots.
+    """
     try:
-        # Create an instance of the vasprun class
-        vasp = vasprun(vasprun_file, verbosity=verbosity)
+        logging.info("Generating plots...")
+        dos_filename = os.path.join(output_dir, "DOS_graph.png")
+        vasp.plot_dos(filename=dos_filename, style="t+spd")
+        logging.info(f"DOS plot saved to {dos_filename}")
 
-        # Check for errors
-        if vasp.error:
-            raise ValueError(f"Error parsing file: {vasp.errormsg}")
+        band_filename = os.path.join(output_dir, "BAND_graph.png")
+        vasp.plot_band(filename=band_filename)
+        logging.info(f"BAND plot saved to {band_filename}")
 
-        # Print main data
-        print("VASP Data:")
-        pprint.pprint({
-            "Energy": vasp.values['calculation']['energy'],
-            "Energy per atom": vasp.values['calculation']['energy_per_atom'],
-            "Final atomic positions": vasp.values['finalpos']['positions'],
-            "Elements in the system": vasp.values['elements'],
-            "System composition": vasp.values['composition'],
-            "Band gap value": vasp.values['gap'],
-            "Valence Band Maximum (VBM)": vasp.values['vbm'],
-            "Conduction Band Minimum (CBM)": vasp.values['cbm']
-        })
+        band_dos_filename = os.path.join(output_dir, "BAND_dos_graph.png")
+        vasp.plot_band_dos(filename=band_dos_filename)
+        logging.info(f"BAND+DOS plot saved to {band_dos_filename}")
+
+    except Exception as e:
+        logging.error(f"Error while generating plots: {e}")
+        raise
+
+
+def main(vasprun_file, output_dir, verbosity=1):
+    """
+    Main function to process VASP data and generate plots.
+    """
+    try:
+        # Setup logging and validate paths
+        setup_logging()
+        validate_paths(vasprun_file, output_dir)
+
+        # Extract data
+        data, vasp = extract_vasp_data(vasprun_file, verbosity)
+
+        # Display extracted data
+        display_data(data)
 
         # Generate plots
         generate_plots(vasp, output_dir)
 
+    except FileNotFoundError as e:
+        logging.error(e)
+    except ValueError as e:
+        logging.error(e)
     except Exception as e:
-        print(f"An error occurred: {e}")
+        logging.error(f"Unexpected error: {e}")
 
 
-# Function to generate plots
-def generate_plots(vasp, output_dir):
-    try:
-        print("Generating plots...")
-
-        # Check if the directory exists, and create it if necessary
-        if not os.path.exists(output_dir):
-            os.makedirs(output_dir)
-
-        # Save plots in the specified directory
-        dos_filename = os.path.join(output_dir, "DOS_graph.png")
-        vasp.plot_dos(filename=dos_filename, style="t+spd")
-        print(f"DOS plot saved as '{dos_filename}'")
-
-        band_filename = os.path.join(output_dir, "BAND_graph.png")
-        vasp.plot_band(filename=band_filename)
-        print(f"BAND plot saved as '{band_filename}'")
-
-        band_dos_filename = os.path.join(output_dir, "BAND_dos_graph.png")
-        vasp.plot_band_dos(filename=band_dos_filename)
-        print(f"BAND+DOS plot saved as '{band_dos_filename}'")
-
-    except Exception as e:
-        print(f"Error while generating plots: {e}")
-
-
-# Entry point
 if __name__ == "__main__":
-    vasprun_file = os.path.join(get_project_path(), "vasprun_CA_U.xml")  # Specify the path to your vasprun.xml
-    output_directory = os.path.join(get_project_path(), "test_cases")
+    vasprun_file = os.path.join(get_project_path(), "test_cases", "vasprun_CA_U.xml")  # Path to vasprun.xml
+    output_directory = os.path.join(get_project_path(), "test_cases")  # Output directory
     verbosity_level = 1  # Verbosity level
+
     main(vasprun_file, output_directory, verbosity=verbosity_level)

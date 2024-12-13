@@ -132,9 +132,22 @@ def process_file(filepath: str, output_dir: str):
 
     # Generate plots and ensure they are closed after saving
     try:
-        dos_path = os.path.join(output_dir, f"DOS_graph{suffix}.png")
-        band_path = os.path.join(output_dir, f"BAND_graph{suffix}.png")
-        band_dos_path = os.path.join(output_dir, f"BAND_DOS_graph{suffix}.png")
+        #dos_path = os.path.join(output_dir, f"DOS_graph{suffix}.png")
+        #band_path = os.path.join(output_dir, f"BAND_graph{suffix}.png")
+        #band_dos_path = os.path.join(output_dir, f"BAND_DOS_graph{suffix}.png")
+        #dos_path = os.makedirs(os.path.join(output_dir, "DOS_graphs"), exist_ok=True)
+        #band_path = os.makedirs(os.path.join(output_dir, "BAND_graphs"), exist_ok=True)
+        #band_dos_path = os.makedirs(os.path.join(output_dir, "BAND_DOS_graphs"), exist_ok=True)
+        # Ensure the directories exist
+        os.makedirs(os.path.join(output_dir, "DOS_graphs"), exist_ok=True)
+        os.makedirs(os.path.join(output_dir, "BAND_graphs"), exist_ok=True)
+        os.makedirs(os.path.join(output_dir, "BAND_DOS_graphs"), exist_ok=True)
+
+        # Define paths
+        dos_path = os.path.join(output_dir, "DOS_graphs", f"DOS_graph{suffix}.png")
+        band_path = os.path.join(output_dir, "BAND_graphs", f"BAND_graph{suffix}.png")
+        band_dos_path = os.path.join(output_dir, "BAND_DOS_graphs", f"BAND_DOS_graph{suffix}.png")
+
 
         vasp.plot_dos(filename=dos_path)
         plt.close()  # Close the DOS plot

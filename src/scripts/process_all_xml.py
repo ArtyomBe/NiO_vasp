@@ -4,14 +4,13 @@ import shutil
 from xml.etree import ElementTree as ET
 
 import matplotlib.pyplot as plt
-
 from libs.vasprun_optimized import vasprun
 from utils.utils import get_project_path
-
+from colorlog import ColoredFormatter
 
 def setup_logging(output_dir: str):
     """
-    Configures logging to save logs in the specified output directory.
+    Configures logging to save logs in the specified output directory with colored console output.
     """
     log_file = os.path.join(output_dir, "processing_log.txt")
 
@@ -19,14 +18,30 @@ def setup_logging(output_dir: str):
     for handler in logging.root.handlers[:]:
         logging.root.removeHandler(handler)
 
+    # Настройка цветного форматирования для консоли
+    formatter = ColoredFormatter(
+        "%(log_color)s%(asctime)s [%(levelname)s] %(message)s",
+        log_colors={
+            "DEBUG": "cyan",
+            "INFO": "green",
+            "WARNING": "yellow",
+            "ERROR": "red",
+            "CRITICAL": "bold_red"
+        },
+    )
+
+    # Обработчик для консоли
+    console_handler = logging.StreamHandler()
+    console_handler.setFormatter(formatter)
+
+    # Обработчик для файла
+    file_handler = logging.FileHandler(log_file, mode='w')
+    file_handler.setFormatter(logging.Formatter("%(asctime)s [%(levelname)s] %(message)s"))
+
     # Настройка логирования
     logging.basicConfig(
         level=logging.INFO,
-        format="%(asctime)s [%(levelname)s] %(message)s",
-        handlers=[
-            logging.FileHandler(log_file, mode='w'),
-            logging.StreamHandler()
-        ]
+        handlers=[console_handler, file_handler]
     )
     logging.info(f"Logging configured. Logs will be saved to {log_file}")
 
@@ -151,9 +166,7 @@ def process_xml_files(input_dir: str, output_dir: str):
 
 if __name__ == "__main__":
     # Path to the directory with XML files
-    # input_directory = '/Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls'
     input_directory = os.path.join(get_project_path(), "output_analysis", "HF_analysis", "xmls")
-    # output_directory = '/Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs'
     output_directory = os.path.join(get_project_path(), "output_analysis", "HF_analysis", "graphs")
 
     # Prepare the output directory and setup logging

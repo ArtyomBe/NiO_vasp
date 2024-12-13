@@ -975,7 +975,7 @@ class vasprun:
 
     def plot_band_dos(self, filename=None, band_style='normal', dos_style='t+a', smear=None,
                       e_range=[-10, 3], dos_max=None, plim=[0.0, 0.5],
-                      band_labels=None, figsize=(16, 9), dpi=120):
+                      band_labels=None, figsize=(16, 9), dpi=1200):
         """
         Plot band structure and density of states (DOS) with the specified settings.
 

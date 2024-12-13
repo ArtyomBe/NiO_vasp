@@ -2,7 +2,9 @@ import os
 import logging
 from mp_api.client import MPRester
 from utils.utils import get_project_path
-os.environ["MP_API_KEY"] = "ZA65p8KgTDcyhsEeL186AST4KYoxuIW5"
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Настройка логирования
 logging.basicConfig(

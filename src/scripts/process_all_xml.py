@@ -58,44 +58,44 @@ def prepare_output_directory(output_dir: str):
 
 def parse_filename_suffix(xml_file: str) -> str:
     """
-    Parses the XML file and returns a suffix for the plot filenames.
+    Parses the XML file and returns a well-formatted suffix for filenames.
     """
     try:
+        # Parse XML
         tree = ET.parse(xml_file)
         root = tree.getroot()
 
+        # Initialize parts for suffix
         suffix_parts = []
 
-        # Extract GGA
-        gga = root.find(".//i[@name='GGA']")
-        if gga is not None and gga.text:
-            suffix_parts.append(f"GGA_{gga.text.strip()}")
+        # Define parameter mappings with specific formatting
+        parameter_map = {
+            "GGA": lambda x: f"GGA_{x.strip()}",
+            "LDAU": lambda x: "U" if x.strip().upper() == "T" else "no_U",
+            "AEXX": lambda x: f"AEXX_{round(float(x.strip()) * 100)}%",
+        }
 
-        # Extract LDAU
-        ldau = root.find(".//i[@name='LDAU']")
-        if ldau is not None and ldau.text.strip() == "T":
-            suffix_parts.append("U")
-        elif ldau is not None:
-            suffix_parts.append("no_U")
+        # Loop through parameters and extract values
+        for param, formatter in parameter_map.items():
+            element = root.find(f".//i[@name='{param}']")
+            if element is not None and element.text:
+                try:
+                    value = element.text.strip()
+                    formatted_value = formatter(value)
+                    suffix_parts.append(formatted_value)
+                    logging.debug(f"Parameter {param}: {value} -> {formatted_value}")
+                except ValueError as ve:
+                    logging.warning(f"Invalid value for {param} in {xml_file}: {ve}")
 
-        # Extract METAGGA
-        metagga = root.find(".//i[@name='METAGGA']")
-        if metagga is not None and metagga.text:
-            suffix_parts.append(f"METAGGA_{metagga.text.strip()}")
+        # Join parts into a single suffix
+        suffix = "_".join(suffix_parts)
+        return f"_{suffix}" if suffix_parts else "_unknown"
 
-        # Extract AEXX and convert to percentage
-        aexx = root.find(".//i[@name='AEXX']")
-        if aexx is not None and aexx.text:
-            try:
-                aexx_value = float(aexx.text.strip())
-                suffix_parts.append(f"AEXX_{int(aexx_value * 100)}%")
-            except ValueError:
-                logging.warning(f"Invalid value for AEXX in {xml_file}")
-
-        # Join suffix parts
-        return "_" + "_".join(suffix_parts) if suffix_parts else ""
+    except ET.ParseError as pe:
+        logging.error(f"XML parsing error for file {xml_file}: {pe}")
+        return "_unknown"
     except Exception as e:
-        logging.error(f"Error parsing XML file {xml_file}: {e}")
+        logging.error(f"Unexpected error while processing {xml_file}: {e}")
         return "_unknown"
 
 
@@ -165,9 +165,14 @@ def process_file(filepath: str, output_dir: str):
 
 def process_xml_files(input_dir: str, output_dir: str):
     """
-    Processes all XML files in the directory.
+    Processes all XML files in the directory in numerical order based on filenames.
     """
+    # Получаем список файлов с расширением .xml
     xml_files = [f for f in os.listdir(input_dir) if f.endswith('.xml')]
+
+    # Сортируем файлы по числовой части имени
+    xml_files = sorted(xml_files, key=lambda x: int(''.join(filter(str.isdigit, x)) or 0))
+
     if not xml_files:
         logging.warning("No XML files found in the directory for processing.")
         return
@@ -175,7 +180,6 @@ def process_xml_files(input_dir: str, output_dir: str):
     for filename in xml_files:
         filepath = os.path.join(input_dir, filename)
         process_file(filepath, output_dir)
-
 
 if __name__ == "__main__":
     # Path to the directory with XML files

@@ -1,36 +1,6 @@
-2024-12-13 12:01:57,804 [INFO] Logging configured. Logs will be saved to /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/processing_log.txt
-2024-12-13 12:01:57,805 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun2.xml
-2024-12-13 12:01:57,846 [INFO] File: vasprun2.xml_GGA_--_U_AEXX_2%
-Energy: -49.02085051
-Energy per atom: -6.12760631375
-System elements: ['Ni', 'O']
-System composition: {'Ni': 4, 'O': 4}
-Band gap: 1.7042000000000002
-Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.03498991000000018}
-Conduction Band Minimum (CBM): {'kpoint': array([0. , 0.5, 0. ]), 'value': 1.66921009}
-2024-12-13 12:02:13,239 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_2%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_2%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_2%.png
-2024-12-13 12:02:13,241 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun3.xml
-2024-12-13 12:02:13,285 [INFO] File: vasprun3.xml_GGA_--_U_AEXX_3%
-Energy: -50.18649124
-Energy per atom: -6.273311405
-System elements: ['Ni', 'O']
-System composition: {'Ni': 4, 'O': 4}
-Band gap: 1.8892000000000007
-Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.007464900000000441}
-Conduction Band Minimum (CBM): {'kpoint': array([0. , 0.5, 0. ]), 'value': 1.8817351000000002}
-2024-12-13 12:02:28,440 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_3%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_3%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_3%.png
-2024-12-13 12:02:28,442 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun1.xml
-2024-12-13 12:02:28,530 [INFO] File: vasprun1.xml_GGA_--_U_AEXX_1%
-Energy: -47.85925754
-Energy per atom: -5.9824071925
-System elements: ['Ni', 'O']
-System composition: {'Ni': 4, 'O': 4}
-Band gap: 1.5201000000000002
-Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.04827403999999991}
-Conduction Band Minimum (CBM): {'kpoint': array([0. , 0.5, 0. ]), 'value': 1.4718259600000003}
-2024-12-13 12:02:45,557 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_1%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_1%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_1%.png
-2024-12-13 12:02:45,561 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun0.xml
-2024-12-13 12:02:45,605 [INFO] File: vasprun0.xml_GGA_--_U_AEXX_0%
+2024-12-14 16:21:51,636 [INFO] Logging configured. Logs will be saved to /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/processing_log.txt
+2024-12-14 16:21:51,636 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun0.xml
+2024-12-14 16:21:51,680 [INFO] File: vasprun0.xml_GGA_--_U_AEXX_0%
 Energy: -46.70176765
 Energy per atom: -5.83772095625
 System elements: ['Ni', 'O']
@@ -38,9 +8,39 @@ System composition: {'Ni': 4, 'O': 4}
 Band gap: 1.3370999999999995
 Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.07275357999999965}
 Conduction Band Minimum (CBM): {'kpoint': array([0. , 0.5, 0. ]), 'value': 1.2643464199999999}
-2024-12-13 12:03:10,739 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_0%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_0%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_0%.png
-2024-12-13 12:03:10,750 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun4.xml
-2024-12-13 12:03:10,824 [INFO] File: vasprun4.xml_GGA_--_U_AEXX_4%
+2024-12-14 16:21:52,893 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_0%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_0%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_0%.png
+2024-12-14 16:21:52,895 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun1.xml
+2024-12-14 16:21:52,932 [INFO] File: vasprun1.xml_GGA_--_U_AEXX_1%
+Energy: -47.85925754
+Energy per atom: -5.9824071925
+System elements: ['Ni', 'O']
+System composition: {'Ni': 4, 'O': 4}
+Band gap: 1.5201000000000002
+Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.04827403999999991}
+Conduction Band Minimum (CBM): {'kpoint': array([0. , 0.5, 0. ]), 'value': 1.4718259600000003}
+2024-12-14 16:21:54,150 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_1%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_1%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_1%.png
+2024-12-14 16:21:54,151 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun2.xml
+2024-12-14 16:21:54,226 [INFO] File: vasprun2.xml_GGA_--_U_AEXX_2%
+Energy: -49.02085051
+Energy per atom: -6.12760631375
+System elements: ['Ni', 'O']
+System composition: {'Ni': 4, 'O': 4}
+Band gap: 1.7042000000000002
+Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.03498991000000018}
+Conduction Band Minimum (CBM): {'kpoint': array([0. , 0.5, 0. ]), 'value': 1.66921009}
+2024-12-14 16:21:55,510 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_2%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_2%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_2%.png
+2024-12-14 16:21:55,515 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun3.xml
+2024-12-14 16:21:55,557 [INFO] File: vasprun3.xml_GGA_--_U_AEXX_3%
+Energy: -50.18649124
+Energy per atom: -6.273311405
+System elements: ['Ni', 'O']
+System composition: {'Ni': 4, 'O': 4}
+Band gap: 1.8892000000000007
+Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.007464900000000441}
+Conduction Band Minimum (CBM): {'kpoint': array([0. , 0.5, 0. ]), 'value': 1.8817351000000002}
+2024-12-14 16:21:56,746 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_3%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_3%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_3%.png
+2024-12-14 16:21:56,747 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun4.xml
+2024-12-14 16:21:56,784 [INFO] File: vasprun4.xml_GGA_--_U_AEXX_4%
 Energy: -51.35619617
 Energy per atom: -6.41952452125
 System elements: ['Ni', 'O']
@@ -48,9 +48,9 @@ System composition: {'Ni': 4, 'O': 4}
 Band gap: 2.0764000000000005
 Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.06802732000000056}
 Conduction Band Minimum (CBM): {'kpoint': array([0. , 0.5, 0. ]), 'value': 2.00837268}
-2024-12-13 12:03:26,624 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_4%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_4%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_4%.png
-2024-12-13 12:03:26,631 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun5.xml
-2024-12-13 12:03:26,676 [INFO] File: vasprun5.xml_GGA_--_U_AEXX_5%
+2024-12-14 16:21:57,996 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_4%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_4%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_4%.png
+2024-12-14 16:21:57,997 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun5.xml
+2024-12-14 16:21:58,034 [INFO] File: vasprun5.xml_GGA_--_U_AEXX_5%
 Energy: -52.52974778
 Energy per atom: -6.5662184725
 System elements: ['Ni', 'O']
@@ -58,19 +58,9 @@ System composition: {'Ni': 4, 'O': 4}
 Band gap: 2.2636000000000003
 Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.03801015999999979}
 Conduction Band Minimum (CBM): {'kpoint': array([0. , 0.5, 0. ]), 'value': 2.2255898400000005}
-2024-12-13 12:03:43,276 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_5%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_5%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_5%.png
-2024-12-13 12:03:43,328 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun7.xml
-2024-12-13 12:03:43,412 [INFO] File: vasprun7.xml_GGA_--_U_AEXX_7%
-Energy: -54.88822735
-Energy per atom: -6.86102841875
-System elements: ['Ni', 'O']
-System composition: {'Ni': 4, 'O': 4}
-Band gap: 2.6401000000000003
-Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.07767320000000044}
-Conduction Band Minimum (CBM): {'kpoint': array([0. , 0.5, 0. ]), 'value': 2.5624268}
-2024-12-13 12:04:00,714 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_7%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_7%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_7%.png
-2024-12-13 12:04:00,720 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun6.xml
-2024-12-13 12:04:00,759 [INFO] File: vasprun6.xml_GGA_--_U_AEXX_6%
+2024-12-14 16:21:59,196 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_5%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_5%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_5%.png
+2024-12-14 16:21:59,197 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun6.xml
+2024-12-14 16:21:59,234 [INFO] File: vasprun6.xml_GGA_--_U_AEXX_6%
 Energy: -53.7071058
 Energy per atom: -6.713388225
 System elements: ['Ni', 'O']
@@ -78,179 +68,19 @@ System composition: {'Ni': 4, 'O': 4}
 Band gap: 2.4513999999999996
 Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.019381789999999732}
 Conduction Band Minimum (CBM): {'kpoint': array([0. , 0.5, 0. ]), 'value': 2.43201821}
-2024-12-13 12:04:17,739 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_6%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_6%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_6%.png
-2024-12-13 12:04:17,746 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun26.xml
-2024-12-13 12:04:18,016 [INFO] File: vasprun26.xml_GGA_--_U_AEXX_26%
-Energy: -77.95856485
-Energy per atom: -9.74482060625
+2024-12-14 16:22:00,394 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_6%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_6%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_6%.png
+2024-12-14 16:22:00,396 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun7.xml
+2024-12-14 16:22:00,430 [INFO] File: vasprun7.xml_GGA_--_U_AEXX_7%
+Energy: -54.88822735
+Energy per atom: -6.86102841875
 System elements: ['Ni', 'O']
 System composition: {'Ni': 4, 'O': 4}
-Band gap: 5.536599999999998
-Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.024548449999999722}
-Conduction Band Minimum (CBM): {'kpoint': array([0., 0., 0.]), 'value': 5.512051549999999}
-2024-12-13 12:04:33,218 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_26%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_26%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_26%.png
-2024-12-13 12:04:33,221 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun18.xml
-2024-12-13 12:04:33,260 [INFO] File: vasprun18.xml_GGA_--_U_AEXX_18%
-Energy: -68.10977527
-Energy per atom: -8.51372190875
-System elements: ['Ni', 'O']
-System composition: {'Ni': 4, 'O': 4}
-Band gap: 4.623100000000001
-Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.07140827999999999}
-Conduction Band Minimum (CBM): {'kpoint': array([0., 0., 0.]), 'value': 4.551691720000001}
-2024-12-13 12:04:48,923 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_18%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_18%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_18%.png
-2024-12-13 12:04:48,926 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun24.xml
-2024-12-13 12:04:48,967 [INFO] File: vasprun24.xml_GGA_--_U_AEXX_24%
-Energy: -75.4798345
-Energy per atom: -9.4349793125
-System elements: ['Ni', 'O']
-System composition: {'Ni': 4, 'O': 4}
-Band gap: 5.307400000000001
-Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.01570266000000009}
-Conduction Band Minimum (CBM): {'kpoint': array([0., 0., 0.]), 'value': 5.291697340000001}
-2024-12-13 12:05:04,692 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_24%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_24%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_24%.png
-2024-12-13 12:05:04,695 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun25.xml
-2024-12-13 12:05:04,738 [INFO] File: vasprun25.xml_GGA_--_U_AEXX_25%
-Energy: -76.7178794
-Energy per atom: -9.589734925
-System elements: ['Ni', 'O']
-System composition: {'Ni': 4, 'O': 4}
-Band gap: 5.422000000000001
-Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.06397537000000009}
-Conduction Band Minimum (CBM): {'kpoint': array([0., 0., 0.]), 'value': 5.358024630000001}
-2024-12-13 12:05:19,650 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_25%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_25%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_25%.png
-2024-12-13 12:05:19,653 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun19.xml
-2024-12-13 12:05:19,698 [INFO] File: vasprun19.xml_GGA_--_U_AEXX_19%
-Energy: -69.33093127
-Energy per atom: -8.66636640875
-System elements: ['Ni', 'O']
-System composition: {'Ni': 4, 'O': 4}
-Band gap: 4.736800000000001
-Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.03854205999999971}
-Conduction Band Minimum (CBM): {'kpoint': array([0., 0., 0.]), 'value': 4.69825794}
-2024-12-13 12:05:34,838 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_19%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_19%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_19%.png
-2024-12-13 12:05:34,843 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun21.xml
-2024-12-13 12:05:34,882 [INFO] File: vasprun21.xml_GGA_--_U_AEXX_21%
-Energy: -71.78202607
-Energy per atom: -8.97275325875
-System elements: ['Ni', 'O']
-System composition: {'Ni': 4, 'O': 4}
-Band gap: 4.964700000000001
-Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.054419530000000105}
-Conduction Band Minimum (CBM): {'kpoint': array([0., 0., 0.]), 'value': 4.91028047}
-2024-12-13 12:05:51,845 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_21%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_21%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_21%.png
-2024-12-13 12:05:51,911 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun20.xml
-2024-12-13 12:05:52,728 [INFO] File: vasprun20.xml_GGA_--_U_AEXX_20%
-Energy: -70.55503289
-Energy per atom: -8.81937911125
-System elements: ['Ni', 'O']
-System composition: {'Ni': 4, 'O': 4}
-Band gap: 4.8508
-Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.08916688000000006}
-Conduction Band Minimum (CBM): {'kpoint': array([0., 0., 0.]), 'value': 4.76163312}
-2024-12-13 12:06:08,005 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_20%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_20%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_20%.png
-2024-12-13 12:06:08,013 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun22.xml
-2024-12-13 12:06:08,058 [INFO] File: vasprun22.xml_GGA_--_U_AEXX_22%
-Energy: -73.01185799
-Energy per atom: -9.12648224875
-System elements: ['Ni', 'O']
-System composition: {'Ni': 4, 'O': 4}
-Band gap: 5.078899999999999
-Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.004405509999999779}
-Conduction Band Minimum (CBM): {'kpoint': array([0., 0., 0.]), 'value': 5.074494489999999}
-2024-12-13 12:06:24,648 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_22%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_22%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_22%.png
-2024-12-13 12:06:24,658 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun23.xml
-2024-12-13 12:06:24,704 [INFO] File: vasprun23.xml_GGA_--_U_AEXX_23%
-Energy: -74.24447738
-Energy per atom: -9.2805596725
-System elements: ['Ni', 'O']
-System composition: {'Ni': 4, 'O': 4}
-Band gap: 5.193100000000001
-Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.05341978000000003}
-Conduction Band Minimum (CBM): {'kpoint': array([0., 0., 0.]), 'value': 5.139680220000001}
-2024-12-13 12:06:39,729 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_23%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_23%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_23%.png
-2024-12-13 12:06:39,733 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun12.xml
-2024-12-13 12:06:39,783 [INFO] File: vasprun12.xml_GGA_--_U_AEXX_12%
-Energy: -60.84787048
-Energy per atom: -7.60598381
-System elements: ['Ni', 'O']
-System composition: {'Ni': 4, 'O': 4}
-Band gap: 3.5960000000000005
-Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.014502390000000087}
-Conduction Band Minimum (CBM): {'kpoint': array([0. , 0.5, 0. ]), 'value': 3.5814976100000004}
-2024-12-13 12:06:54,607 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_12%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_12%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_12%.png
-2024-12-13 12:06:54,610 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun13.xml
-2024-12-13 12:06:54,650 [INFO] File: vasprun13.xml_GGA_--_U_AEXX_13%
-Energy: -62.05016325
-Energy per atom: -7.75627040625
-System elements: ['Ni', 'O']
-System composition: {'Ni': 4, 'O': 4}
-Band gap: 3.7898
-Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.06877157}
-Conduction Band Minimum (CBM): {'kpoint': array([0. , 0.5, 0. ]), 'value': 3.72102843}
-2024-12-13 12:07:09,778 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_13%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_13%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_13%.png
-2024-12-13 12:07:09,781 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun11.xml
-2024-12-13 12:07:09,816 [INFO] File: vasprun11.xml_GGA_--_U_AEXX_11%
-Energy: -59.64895963
-Energy per atom: -7.45611995375
-System elements: ['Ni', 'O']
-System composition: {'Ni': 4, 'O': 4}
-Band gap: 3.4032999999999998
-Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.05351923999999997}
-Conduction Band Minimum (CBM): {'kpoint': array([0. , 0.5, 0. ]), 'value': 3.34978076}
-2024-12-13 12:07:24,721 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_11%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_11%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_11%.png
-2024-12-13 12:07:24,724 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun10.xml
-2024-12-13 12:07:24,912 [INFO] File: vasprun10.xml_GGA_--_U_AEXX_10%
-Energy: -58.45347445
-Energy per atom: -7.30668430625
-System elements: ['Ni', 'O']
-System composition: {'Ni': 4, 'O': 4}
-Band gap: 3.2113000000000005
-Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.07781663000000005}
-Conduction Band Minimum (CBM): {'kpoint': array([0. , 0.5, 0. ]), 'value': 3.1334833700000004}
-2024-12-13 12:07:40,216 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_10%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_10%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_10%.png
-2024-12-13 12:07:40,227 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun14.xml
-2024-12-13 12:07:40,270 [INFO] File: vasprun14.xml_GGA_--_U_AEXX_14%
-Energy: -63.25573921
-Energy per atom: -7.90696740125
-System elements: ['Ni', 'O']
-System composition: {'Ni': 4, 'O': 4}
-Band gap: 3.984
-Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.04112935999999978}
-Conduction Band Minimum (CBM): {'kpoint': array([0. , 0.5, 0. ]), 'value': 3.94287064}
-2024-12-13 12:07:55,634 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_14%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_14%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_14%.png
-2024-12-13 12:07:55,637 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun15.xml
-2024-12-13 12:07:55,679 [INFO] File: vasprun15.xml_GGA_--_U_AEXX_15%
-Energy: -64.46454412
-Energy per atom: -8.058068015
-System elements: ['Ni', 'O']
-System composition: {'Ni': 4, 'O': 4}
-Band gap: 4.1787
-Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.09429160999999997}
-Conduction Band Minimum (CBM): {'kpoint': array([0. , 0.5, 0. ]), 'value': 4.08440839}
-2024-12-13 12:08:10,272 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_15%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_15%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_15%.png
-2024-12-13 12:08:10,291 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun17.xml
-2024-12-13 12:08:10,381 [INFO] File: vasprun17.xml_GGA_--_U_AEXX_17%
-Energy: -66.89162117
-Energy per atom: -8.36145264625
-System elements: ['Ni', 'O']
-System composition: {'Ni': 4, 'O': 4}
-Band gap: 4.509399999999999
-Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.020003949999999993}
-Conduction Band Minimum (CBM): {'kpoint': array([0., 0., 0.]), 'value': 4.48939605}
-2024-12-13 12:08:25,351 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_17%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_17%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_17%.png
-2024-12-13 12:08:25,354 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun16.xml
-2024-12-13 12:08:25,395 [INFO] File: vasprun16.xml_GGA_--_U_AEXX_16%
-Energy: -65.6765244
-Energy per atom: -8.20956555
-System elements: ['Ni', 'O']
-System composition: {'Ni': 4, 'O': 4}
-Band gap: 4.3741
-Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.05091108000000011}
-Conduction Band Minimum (CBM): {'kpoint': array([0. , 0.5, 0. ]), 'value': 4.32318892}
-2024-12-13 12:08:40,843 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_16%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_16%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_16%.png
-2024-12-13 12:08:40,846 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun8.xml
-2024-12-13 12:08:40,884 [INFO] File: vasprun8.xml_GGA_--_U_AEXX_8%
+Band gap: 2.6401000000000003
+Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.07767320000000044}
+Conduction Band Minimum (CBM): {'kpoint': array([0. , 0.5, 0. ]), 'value': 2.5624268}
+2024-12-14 16:22:01,586 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_7%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_7%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_7%.png
+2024-12-14 16:22:01,589 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun8.xml
+2024-12-14 16:22:01,704 [INFO] File: vasprun8.xml_GGA_--_U_AEXX_8%
 Energy: -56.0730407
 Energy per atom: -7.0091300875
 System elements: ['Ni', 'O']
@@ -258,9 +88,9 @@ System composition: {'Ni': 4, 'O': 4}
 Band gap: 2.8297999999999996
 Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.04383525999999982}
 Conduction Band Minimum (CBM): {'kpoint': array([0. , 0.5, 0. ]), 'value': 2.78596474}
-2024-12-13 12:08:56,116 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_8%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_8%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_8%.png
-2024-12-13 12:08:56,119 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun9.xml
-2024-12-13 12:08:56,294 [INFO] File: vasprun9.xml_GGA_--_U_AEXX_9%
+2024-12-14 16:22:03,017 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_8%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_8%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_8%.png
+2024-12-14 16:22:03,021 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun9.xml
+2024-12-14 16:22:03,067 [INFO] File: vasprun9.xml_GGA_--_U_AEXX_9%
 Energy: -57.26147911
 Energy per atom: -7.15768488875
 System elements: ['Ni', 'O']
@@ -268,4 +98,334 @@ System composition: {'Ni': 4, 'O': 4}
 Band gap: 3.0201000000000002
 Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.02164431000000011}
 Conduction Band Minimum (CBM): {'kpoint': array([0. , 0.5, 0. ]), 'value': 2.99845569}
-2024-12-13 12:09:10,667 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_9%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_9%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_9%.png
+2024-12-14 16:22:04,251 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_9%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_9%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_9%.png
+2024-12-14 16:22:04,252 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun10.xml
+2024-12-14 16:22:04,289 [INFO] File: vasprun10.xml_GGA_--_U_AEXX_10%
+Energy: -58.45347445
+Energy per atom: -7.30668430625
+System elements: ['Ni', 'O']
+System composition: {'Ni': 4, 'O': 4}
+Band gap: 3.2113000000000005
+Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.07781663000000005}
+Conduction Band Minimum (CBM): {'kpoint': array([0. , 0.5, 0. ]), 'value': 3.1334833700000004}
+2024-12-14 16:22:05,505 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_10%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_10%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_10%.png
+2024-12-14 16:22:05,506 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun11.xml
+2024-12-14 16:22:05,545 [INFO] File: vasprun11.xml_GGA_--_U_AEXX_11%
+Energy: -59.64895963
+Energy per atom: -7.45611995375
+System elements: ['Ni', 'O']
+System composition: {'Ni': 4, 'O': 4}
+Band gap: 3.4032999999999998
+Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.05351923999999997}
+Conduction Band Minimum (CBM): {'kpoint': array([0. , 0.5, 0. ]), 'value': 3.34978076}
+2024-12-14 16:22:06,717 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_11%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_11%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_11%.png
+2024-12-14 16:22:06,720 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun12.xml
+2024-12-14 16:22:06,764 [INFO] File: vasprun12.xml_GGA_--_U_AEXX_12%
+Energy: -60.84787048
+Energy per atom: -7.60598381
+System elements: ['Ni', 'O']
+System composition: {'Ni': 4, 'O': 4}
+Band gap: 3.5960000000000005
+Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.014502390000000087}
+Conduction Band Minimum (CBM): {'kpoint': array([0. , 0.5, 0. ]), 'value': 3.5814976100000004}
+2024-12-14 16:22:07,954 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_12%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_12%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_12%.png
+2024-12-14 16:22:07,955 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun13.xml
+2024-12-14 16:22:07,992 [INFO] File: vasprun13.xml_GGA_--_U_AEXX_13%
+Energy: -62.05016325
+Energy per atom: -7.75627040625
+System elements: ['Ni', 'O']
+System composition: {'Ni': 4, 'O': 4}
+Band gap: 3.7898
+Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.06877157}
+Conduction Band Minimum (CBM): {'kpoint': array([0. , 0.5, 0. ]), 'value': 3.72102843}
+2024-12-14 16:22:09,137 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_13%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_13%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_13%.png
+2024-12-14 16:22:09,138 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun14.xml
+2024-12-14 16:22:09,204 [INFO] File: vasprun14.xml_GGA_--_U_AEXX_14%
+Energy: -63.25573921
+Energy per atom: -7.90696740125
+System elements: ['Ni', 'O']
+System composition: {'Ni': 4, 'O': 4}
+Band gap: 3.984
+Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.04112935999999978}
+Conduction Band Minimum (CBM): {'kpoint': array([0. , 0.5, 0. ]), 'value': 3.94287064}
+2024-12-14 16:22:10,436 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_14%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_14%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_14%.png
+2024-12-14 16:22:10,440 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun15.xml
+2024-12-14 16:22:10,480 [INFO] File: vasprun15.xml_GGA_--_U_AEXX_15%
+Energy: -64.46454412
+Energy per atom: -8.058068015
+System elements: ['Ni', 'O']
+System composition: {'Ni': 4, 'O': 4}
+Band gap: 4.1787
+Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.09429160999999997}
+Conduction Band Minimum (CBM): {'kpoint': array([0. , 0.5, 0. ]), 'value': 4.08440839}
+2024-12-14 16:22:12,292 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_15%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_15%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_15%.png
+2024-12-14 16:22:12,294 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun16.xml
+2024-12-14 16:22:12,334 [INFO] File: vasprun16.xml_GGA_--_U_AEXX_16%
+Energy: -65.6765244
+Energy per atom: -8.20956555
+System elements: ['Ni', 'O']
+System composition: {'Ni': 4, 'O': 4}
+Band gap: 4.3741
+Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.05091108000000011}
+Conduction Band Minimum (CBM): {'kpoint': array([0. , 0.5, 0. ]), 'value': 4.32318892}
+2024-12-14 16:22:13,573 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_16%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_16%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_16%.png
+2024-12-14 16:22:13,576 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun17.xml
+2024-12-14 16:22:13,616 [INFO] File: vasprun17.xml_GGA_--_U_AEXX_17%
+Energy: -66.89162117
+Energy per atom: -8.36145264625
+System elements: ['Ni', 'O']
+System composition: {'Ni': 4, 'O': 4}
+Band gap: 4.509399999999999
+Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.020003949999999993}
+Conduction Band Minimum (CBM): {'kpoint': array([0., 0., 0.]), 'value': 4.48939605}
+2024-12-14 16:22:14,797 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_17%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_17%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_17%.png
+2024-12-14 16:22:14,798 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun18.xml
+2024-12-14 16:22:14,834 [INFO] File: vasprun18.xml_GGA_--_U_AEXX_18%
+Energy: -68.10977527
+Energy per atom: -8.51372190875
+System elements: ['Ni', 'O']
+System composition: {'Ni': 4, 'O': 4}
+Band gap: 4.623100000000001
+Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.07140827999999999}
+Conduction Band Minimum (CBM): {'kpoint': array([0., 0., 0.]), 'value': 4.551691720000001}
+2024-12-14 16:22:16,078 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_18%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_18%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_18%.png
+2024-12-14 16:22:16,081 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun19.xml
+2024-12-14 16:22:16,121 [INFO] File: vasprun19.xml_GGA_--_U_AEXX_19%
+Energy: -69.33093127
+Energy per atom: -8.66636640875
+System elements: ['Ni', 'O']
+System composition: {'Ni': 4, 'O': 4}
+Band gap: 4.736800000000001
+Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.03854205999999971}
+Conduction Band Minimum (CBM): {'kpoint': array([0., 0., 0.]), 'value': 4.69825794}
+2024-12-14 16:22:17,290 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_19%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_19%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_19%.png
+2024-12-14 16:22:17,291 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun20.xml
+2024-12-14 16:22:17,367 [INFO] File: vasprun20.xml_GGA_--_U_AEXX_20%
+Energy: -70.55503289
+Energy per atom: -8.81937911125
+System elements: ['Ni', 'O']
+System composition: {'Ni': 4, 'O': 4}
+Band gap: 4.8508
+Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.08916688000000006}
+Conduction Band Minimum (CBM): {'kpoint': array([0., 0., 0.]), 'value': 4.76163312}
+2024-12-14 16:22:18,710 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_20%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_20%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_20%.png
+2024-12-14 16:22:18,715 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun21.xml
+2024-12-14 16:22:18,754 [INFO] File: vasprun21.xml_GGA_--_U_AEXX_21%
+Energy: -71.78202607
+Energy per atom: -8.97275325875
+System elements: ['Ni', 'O']
+System composition: {'Ni': 4, 'O': 4}
+Band gap: 4.964700000000001
+Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.054419530000000105}
+Conduction Band Minimum (CBM): {'kpoint': array([0., 0., 0.]), 'value': 4.91028047}
+2024-12-14 16:22:19,902 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_21%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_21%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_21%.png
+2024-12-14 16:22:19,903 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun22.xml
+2024-12-14 16:22:19,940 [INFO] File: vasprun22.xml_GGA_--_U_AEXX_22%
+Energy: -73.01185799
+Energy per atom: -9.12648224875
+System elements: ['Ni', 'O']
+System composition: {'Ni': 4, 'O': 4}
+Band gap: 5.078899999999999
+Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.004405509999999779}
+Conduction Band Minimum (CBM): {'kpoint': array([0., 0., 0.]), 'value': 5.074494489999999}
+2024-12-14 16:22:21,149 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_22%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_22%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_22%.png
+2024-12-14 16:22:21,155 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun23.xml
+2024-12-14 16:22:21,193 [INFO] File: vasprun23.xml_GGA_--_U_AEXX_23%
+Energy: -74.24447738
+Energy per atom: -9.2805596725
+System elements: ['Ni', 'O']
+System composition: {'Ni': 4, 'O': 4}
+Band gap: 5.193100000000001
+Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.05341978000000003}
+Conduction Band Minimum (CBM): {'kpoint': array([0., 0., 0.]), 'value': 5.139680220000001}
+2024-12-14 16:22:22,339 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_23%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_23%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_23%.png
+2024-12-14 16:22:22,340 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun24.xml
+2024-12-14 16:22:22,375 [INFO] File: vasprun24.xml_GGA_--_U_AEXX_24%
+Energy: -75.4798345
+Energy per atom: -9.4349793125
+System elements: ['Ni', 'O']
+System composition: {'Ni': 4, 'O': 4}
+Band gap: 5.307400000000001
+Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.01570266000000009}
+Conduction Band Minimum (CBM): {'kpoint': array([0., 0., 0.]), 'value': 5.291697340000001}
+2024-12-14 16:22:23,528 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_24%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_24%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_24%.png
+2024-12-14 16:22:23,530 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun25.xml
+2024-12-14 16:22:23,566 [INFO] File: vasprun25.xml_GGA_--_U_AEXX_25%
+Energy: -76.7178794
+Energy per atom: -9.589734925
+System elements: ['Ni', 'O']
+System composition: {'Ni': 4, 'O': 4}
+Band gap: 5.422000000000001
+Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.06397537000000009}
+Conduction Band Minimum (CBM): {'kpoint': array([0., 0., 0.]), 'value': 5.358024630000001}
+2024-12-14 16:22:24,734 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_25%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_25%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_25%.png
+2024-12-14 16:22:24,736 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun26.xml
+2024-12-14 16:22:24,828 [INFO] File: vasprun26.xml_GGA_--_U_AEXX_26%
+Energy: -77.95856485
+Energy per atom: -9.74482060625
+System elements: ['Ni', 'O']
+System composition: {'Ni': 4, 'O': 4}
+Band gap: 5.536599999999998
+Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.024548449999999722}
+Conduction Band Minimum (CBM): {'kpoint': array([0., 0., 0.]), 'value': 5.512051549999999}
+2024-12-14 16:22:25,969 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_26%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_26%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_26%.png
+2024-12-14 16:22:25,970 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun27.xml
+2024-12-14 16:22:26,005 [INFO] File: vasprun27.xml_GGA_--_U_AEXX_27%
+Energy: -79.20184517
+Energy per atom: -9.90023064625
+System elements: ['Ni', 'O']
+System composition: {'Ni': 4, 'O': 4}
+Band gap: 5.651300000000001
+Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.0720184399999999}
+Conduction Band Minimum (CBM): {'kpoint': array([0., 0., 0.]), 'value': 5.579281560000001}
+2024-12-14 16:22:27,171 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_27%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_27%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_27%.png
+2024-12-14 16:22:27,179 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun28.xml
+2024-12-14 16:22:27,229 [INFO] File: vasprun28.xml_GGA_--_U_AEXX_28%
+Energy: -80.4476741
+Energy per atom: -10.0559592625
+System elements: ['Ni', 'O']
+System composition: {'Ni': 4, 'O': 4}
+Band gap: 5.766300000000001
+Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.030901839999999847}
+Conduction Band Minimum (CBM): {'kpoint': array([0., 0., 0.]), 'value': 5.735398160000001}
+2024-12-14 16:22:28,514 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_28%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_28%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_28%.png
+2024-12-14 16:22:28,516 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun29.xml
+2024-12-14 16:22:28,557 [INFO] File: vasprun29.xml_GGA_--_U_AEXX_29%
+Energy: -81.69600874
+Energy per atom: -10.2120010925
+System elements: ['Ni', 'O']
+System composition: {'Ni': 4, 'O': 4}
+Band gap: 5.881399999999999
+Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.07777945999999991}
+Conduction Band Minimum (CBM): {'kpoint': array([0., 0., 0.]), 'value': 5.80362054}
+2024-12-14 16:22:29,738 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_29%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_29%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_29%.png
+2024-12-14 16:22:29,740 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun30.xml
+2024-12-14 16:22:29,775 [INFO] File: vasprun30.xml_GGA_--_U_AEXX_30%
+Energy: -82.94680638
+Energy per atom: -10.3683507975
+System elements: ['Ni', 'O']
+System composition: {'Ni': 4, 'O': 4}
+Band gap: 5.996700000000001
+Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.03508756999999996}
+Conduction Band Minimum (CBM): {'kpoint': array([0., 0., 0.]), 'value': 5.961612430000001}
+2024-12-14 16:22:30,930 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_30%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_30%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_30%.png
+2024-12-14 16:22:30,932 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun31.xml
+2024-12-14 16:22:30,966 [INFO] File: vasprun31.xml_GGA_--_U_AEXX_31%
+Energy: -84.2000258
+Energy per atom: -10.525003225
+System elements: ['Ni', 'O']
+System composition: {'Ni': 4, 'O': 4}
+Band gap: 6.1122
+Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.08132032000000011}
+Conduction Band Minimum (CBM): {'kpoint': array([0., 0., 0.]), 'value': 6.03087968}
+2024-12-14 16:22:32,157 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_31%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_31%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_31%.png
+2024-12-14 16:22:32,162 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun32.xml
+2024-12-14 16:22:32,237 [INFO] File: vasprun32.xml_GGA_--_U_AEXX_32%
+Energy: -85.45562698
+Energy per atom: -10.6819533725
+System elements: ['Ni', 'O']
+System composition: {'Ni': 4, 'O': 4}
+Band gap: 6.2278
+Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.036983019999999645}
+Conduction Band Minimum (CBM): {'kpoint': array([0., 0., 0.]), 'value': 6.19081698}
+2024-12-14 16:22:33,381 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_32%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_32%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_32%.png
+2024-12-14 16:22:33,383 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun33.xml
+2024-12-14 16:22:33,417 [INFO] File: vasprun33.xml_GGA_--_U_AEXX_33%
+Energy: -86.71356998
+Energy per atom: -10.8391962475
+System elements: ['Ni', 'O']
+System composition: {'Ni': 4, 'O': 4}
+Band gap: 6.3436
+Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.0825688699999998}
+Conduction Band Minimum (CBM): {'kpoint': array([0., 0., 0.]), 'value': 6.26103113}
+2024-12-14 16:22:34,567 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_33%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_33%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_33%.png
+2024-12-14 16:22:34,569 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun34.xml
+2024-12-14 16:22:34,607 [INFO] File: vasprun34.xml_GGA_--_U_AEXX_34%
+Energy: -87.97381747
+Energy per atom: -10.99672718375
+System elements: ['Ni', 'O']
+System composition: {'Ni': 4, 'O': 4}
+Band gap: 6.4596
+Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.03670354999999992}
+Conduction Band Minimum (CBM): {'kpoint': array([0., 0., 0.]), 'value': 6.42289645}
+2024-12-14 16:22:35,762 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_34%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_34%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_34%.png
+2024-12-14 16:22:35,763 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun35.xml
+2024-12-14 16:22:35,797 [INFO] File: vasprun35.xml_GGA_--_U_AEXX_35%
+Energy: -89.23633307
+Energy per atom: -11.15454163375
+System elements: ['Ni', 'O']
+System composition: {'Ni': 4, 'O': 4}
+Band gap: 6.5758
+Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.08188822999999967}
+Conduction Band Minimum (CBM): {'kpoint': array([0., 0., 0.]), 'value': 6.49391177}
+2024-12-14 16:22:36,964 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_35%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_35%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_35%.png
+2024-12-14 16:22:36,965 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun36.xml
+2024-12-14 16:22:37,001 [INFO] File: vasprun36.xml_GGA_--_U_AEXX_36%
+Energy: -90.50108048
+Energy per atom: -11.31263506
+System elements: ['Ni', 'O']
+System composition: {'Ni': 4, 'O': 4}
+Band gap: 6.692199999999999
+Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.03443325000000019}
+Conduction Band Minimum (CBM): {'kpoint': array([0., 0., 0.]), 'value': 6.657766749999999}
+2024-12-14 16:22:38,164 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_36%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_36%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_36%.png
+2024-12-14 16:22:38,166 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun37.xml
+2024-12-14 16:22:38,202 [INFO] File: vasprun37.xml_GGA_--_U_AEXX_37%
+Energy: -91.76802607
+Energy per atom: -11.47100325875
+System elements: ['Ni', 'O']
+System composition: {'Ni': 4, 'O': 4}
+Band gap: 6.808700000000001
+Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.07906611000000008}
+Conduction Band Minimum (CBM): {'kpoint': array([0., 0., 0.]), 'value': 6.729633890000001}
+2024-12-14 16:22:39,358 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_37%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_37%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_37%.png
+2024-12-14 16:22:39,360 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun38.xml
+2024-12-14 16:22:39,437 [INFO] File: vasprun38.xml_GGA_--_U_AEXX_38%
+Energy: -93.03713489
+Energy per atom: -11.62964186125
+System elements: ['Ni', 'O']
+System composition: {'Ni': 4, 'O': 4}
+Band gap: 6.925599999999999
+Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.03023741000000002}
+Conduction Band Minimum (CBM): {'kpoint': array([0., 0., 0.]), 'value': 6.8953625899999995}
+2024-12-14 16:22:40,590 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_38%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_38%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_38%.png
+2024-12-14 16:22:40,592 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun39.xml
+2024-12-14 16:22:40,628 [INFO] File: vasprun39.xml_GGA_--_U_AEXX_39%
+Energy: -94.30837483
+Energy per atom: -11.78854685375
+System elements: ['Ni', 'O']
+System composition: {'Ni': 4, 'O': 4}
+Band gap: 7.0424999999999995
+Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.07447782999999997}
+Conduction Band Minimum (CBM): {'kpoint': array([0., 0., 0.]), 'value': 6.968022169999999}
+2024-12-14 16:22:41,780 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_39%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_39%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_39%.png
+2024-12-14 16:22:41,782 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun40.xml
+2024-12-14 16:22:41,818 [INFO] File: vasprun40.xml_GGA_--_U_AEXX_40%
+Energy: -95.58171401
+Energy per atom: -11.94771425125
+System elements: ['Ni', 'O']
+System composition: {'Ni': 4, 'O': 4}
+Band gap: 7.159700000000001
+Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.024140660000000036}
+Conduction Band Minimum (CBM): {'kpoint': array([0., 0., 0.]), 'value': 7.13555934}
+2024-12-14 16:22:43,020 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_40%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_40%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_40%.png
+2024-12-14 16:22:43,023 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun41.xml
+2024-12-14 16:22:43,065 [INFO] File: vasprun41.xml_GGA_--_U_AEXX_41%
+Energy: -96.85712331
+Energy per atom: -12.10714041375
+System elements: ['Ni', 'O']
+System composition: {'Ni': 4, 'O': 4}
+Band gap: 7.277000000000001
+Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.06800717999999994}
+Conduction Band Minimum (CBM): {'kpoint': array([0., 0., 0.]), 'value': 7.208992820000001}
+2024-12-14 16:22:44,249 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_41%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_41%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_41%.png
+2024-12-14 16:22:44,250 [INFO] Processing file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/xmls/vasprun42.xml
+2024-12-14 16:22:44,285 [INFO] File: vasprun42.xml_GGA_--_U_AEXX_42%
+Energy: -98.13457167
+Energy per atom: -12.26682145875
+System elements: ['Ni', 'O']
+System composition: {'Ni': 4, 'O': 4}
+Band gap: 7.394500000000001
+Valence Band Maximum (VBM): {'kpoint': array([0.5, 0.5, 0.5]), 'value': -0.016301189999999854}
+Conduction Band Minimum (CBM): {'kpoint': array([0., 0., 0.]), 'value': 7.378198810000001}
+2024-12-14 16:22:45,428 [INFO] Plots saved: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/DOS_graphs/DOS_graph_GGA_--_U_AEXX_42%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_graphs/BAND_graph_GGA_--_U_AEXX_42%.png, /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/graphs/BAND_DOS_graphs/BAND_DOS_graph_GGA_--_U_AEXX_42%.png

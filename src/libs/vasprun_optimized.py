@@ -716,7 +716,7 @@ class vasprun:
         self.values['band_points'] = band_points
 
     def plot_band(self, ax=None, filename=None, style='normal', ylim=[-25, 10],
-                  xlim=None, plim=[0.0, 0.5], labels=None, saveBands=False, dpi=1200):
+                  xlim=None, plim=[0.0, 0.5], labels=None, saveBands=False, dpi=300):
         """
         plot the bandstructure
 
@@ -851,7 +851,7 @@ class vasprun:
         return mydos, labels
 
     def plot_dos(self, ax=None, filename=None, smear=None, flip=False,
-                 style='t', xlim=None, ylim=None, dos_range=[0, None], dpi=1200):
+                 style='t', xlim=None, ylim=None, dos_range=[0, None], dpi=300):
         """
         plot the DOS
 
@@ -975,7 +975,7 @@ class vasprun:
 
     def plot_band_dos(self, filename=None, band_style='normal', dos_style='t+a', smear=None,
                       e_range=[-10, 3], dos_max=None, plim=[0.0, 0.5],
-                      band_labels=None, figsize=(16, 9), dpi=1200):
+                      band_labels=None, figsize=(16, 9), dpi=300):
         """
         Plot band structure and density of states (DOS) with the specified settings.
 

@@ -2,6 +2,7 @@ import os
 import re
 import logging
 import matplotlib.pyplot as plt
+import csv
 from utils.utils import get_project_path
 
 def setup_logging():
@@ -73,6 +74,21 @@ def save_data(output_file, aexx_values, energies, band_gaps):
         logging.error(f"An error occurred while saving data: {e}")
         raise
 
+def save_band_gap_data(csv_file, aexx_values, band_gaps):
+    """
+    Saves AEXX and Band Gap data to a CSV file.
+    """
+    try:
+        with open(csv_file, mode='w', newline='') as file:
+            writer = csv.writer(file)
+            writer.writerow(["AEXX (%)", "Band Gap (eV)"])
+            for x, y in zip(aexx_values, band_gaps):
+                writer.writerow([x, y])
+        logging.info(f"Band Gap data saved to {csv_file}")
+    except Exception as e:
+        logging.error(f"An error occurred while saving Band Gap data: {e}")
+        raise
+
 def plot_graphs(aexx_values, energies, band_gaps, output_dir):
     """
     Plots and saves graphs for Energy and Band Gap against AEXX.
@@ -113,6 +129,7 @@ def main():
     project_path = get_project_path()
     log_path = os.path.join(project_path, "output_analysis", "HF_analysis", "graphs", "processing_log.txt")
     output_path = os.path.join(project_path, "output_analysis", "HF_analysis", "graphs", "HF_coordinates.txt")
+    band_gap_csv = os.path.join(project_path, "output_analysis", "HF_analysis", "graphs", "AEXX_Band_Gap.csv")
     output_dir = os.path.join(project_path, "output_analysis", "HF_analysis", "graphs")
 
     try:
@@ -127,6 +144,7 @@ def main():
         aexx_values, energies, band_gaps = zip(*sorted_data)
 
         save_data(output_path, aexx_values, energies, band_gaps)
+        save_band_gap_data(band_gap_csv, aexx_values, band_gaps)
         plot_graphs(aexx_values, energies, band_gaps, output_dir)
 
     except Exception as e:

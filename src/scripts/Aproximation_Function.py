@@ -8,9 +8,9 @@ from numpy.polynomial import Polynomial
 from utils.utils import get_project_path
 
 # Определение пути к файлу
-filename = os.path.join(get_project_path(), "output_analysis", "HF_analysis", "graphs", "AEXX_Band_Gap.csv")
+filename = os.path.join(get_project_path(), "output_analysis", "HF_analysis", "logs", "AEXX_Band_Gap.csv")
 output_dir = os.path.join(get_project_path(), "output_analysis", "HF_analysis", "graphs", "Approximations_Graph")
-summary_file = os.path.join(output_dir, "approximations.txt")
+summary_file = os.path.join(get_project_path(), "output_analysis", "HF_analysis", "logs", "approximations.txt")
 os.makedirs(output_dir, exist_ok=True)
 
 # Загружаем данные из CSV-файла
@@ -79,12 +79,11 @@ for name, func in models.items():
     plt.ylabel("Band Gap (eV)")
     plt.legend()
     plt.tight_layout()
-    plt.savefig(os.path.join(output_dir, f"{name}_approximation.png"))
+    plt.savefig(os.path.join(output_dir, f"{name}_approximation.png"), dpi=1200, bbox_inches="tight")
     plt.close()
 
     results.append(f"{name} Approximation:\nEquation: {equation}\nR^2 = {r2:.4f}\nRMSE = {rmse:.4f}\nMAE = {mae:.4f}\n")
 
-# Полиномиальные апроксимации до 10-й степени
 # Полиномиальные апроксимации до 10-й степени
 for degree in range(1, 11):
     poly_params, r2, rmse, mae, y_pred = polynomial_fit(x, y, degree)
@@ -103,11 +102,10 @@ for degree in range(1, 11):
     plt.ylabel("Band Gap (eV)")
     plt.legend()
     plt.tight_layout()
-    plt.savefig(os.path.join(output_dir, f"Polynomial_Degree_{degree}_approximation.png"), bbox_inches="tight")
+    plt.savefig(os.path.join(output_dir, f"Polynomial_Degree_{degree}_approximation.png"), dpi=1200, bbox_inches="tight")
     plt.close()
 
     results.append(f"Polynomial Degree {degree} Approximation:\nEquation: {equation}\nR^2 = {r2:.4f}\nRMSE = {rmse:.4f}\nMAE = {mae:.4f}\n")
-
 
 # Запись результатов в файл
 with open(summary_file, "w") as f:

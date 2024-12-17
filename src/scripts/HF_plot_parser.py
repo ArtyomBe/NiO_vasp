@@ -127,9 +127,9 @@ def main():
     setup_logging()
 
     project_path = get_project_path()
-    log_path = os.path.join(project_path, "output_analysis", "HF_analysis", "graphs", "processing_log.txt")
-    output_path = os.path.join(project_path, "output_analysis", "HF_analysis", "graphs", "HF_coordinates.txt")
-    band_gap_csv = os.path.join(project_path, "output_analysis", "HF_analysis", "graphs", "AEXX_Band_Gap.csv")
+    log_path = os.path.join(project_path, "output_analysis", "HF_analysis", "logs", "processing_log.txt")
+    output_path = os.path.join(project_path, "output_analysis", "HF_analysis", "logs", "HF_coordinates.txt")
+    band_gap_csv = os.path.join(project_path, "output_analysis", "HF_analysis", "logs", "AEXX_Band_Gap.csv")
     output_dir = os.path.join(project_path, "output_analysis", "HF_analysis", "graphs")
 
     try:

@@ -12,7 +12,7 @@ def setup_logging(output_dir: str):
     """
     Configures logging to save logs in the specified output directory with colored console output.
     """
-    log_file = os.path.join(output_dir, "processing_log.txt")
+    log_file = os.path.join(get_project_path(), "output_analysis", "HF_analysis", "logs", "processing_log.txt")
 
     # Удаление старых обработчиков
     for handler in logging.root.handlers[:]:

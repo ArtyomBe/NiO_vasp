@@ -15,8 +15,7 @@ for analyzing NiO surfaces at the atomic scale.
 
 ### About the Author
 
-This project is developed and maintained by **Artyom Betekhtin**, a computational chemist and graduate student at the *
-*[Infochemistry Scientific Center at ITMO University](https://infochemistry.ru/)**. I specialize in density functional
+This project is developed and maintained by **Artyom Betekhtin**, a computational chemist and graduate student at the **[Infochemistry Scientific Center at ITMO University](https://infochemistry.ru/)**. I specialize in density functional
 theory (DFT) to study molecular systems, surface modeling, and thermodynamic properties.
 
 I am also a member of **[Group 24](https://theorchem.ru/wiki/Группа_теоретической_химии_(№24)_ИОХ_РАН) at ZIOC RAS**,

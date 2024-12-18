@@ -10,6 +10,7 @@ from utils.utils import get_project_path
 from colorlog import ColoredFormatter
 import gc
 
+
 def setup_logging(output_dir: str):
     """
     Configures logging to save logs in the specified output directory with colored console output.
@@ -38,7 +39,7 @@ def setup_logging(output_dir: str):
 
     # Rotating file handler to limit file size
     from logging.handlers import RotatingFileHandler
-    file_handler = RotatingFileHandler(log_file, maxBytes=10**6, backupCount=5)
+    file_handler = RotatingFileHandler(log_file, maxBytes=10 ** 6, backupCount=5)
     file_handler.setFormatter(logging.Formatter("%(asctime)s [%(levelname)s] %(message)s"))
 
     # Configure logging
@@ -47,6 +48,7 @@ def setup_logging(output_dir: str):
         handlers=[console_handler, file_handler]
     )
     logging.info(f"Logging configured. Logs will be saved to {log_file}")
+
 
 def prepare_output_directory(output_dir: str):
     """
@@ -60,6 +62,7 @@ def prepare_output_directory(output_dir: str):
     except PermissionError as e:
         logging.error(f"Permission error while creating output directory {output_dir}: {e}")
         raise
+
 
 def parse_filename_suffix(xml_file: str) -> str:
     """
@@ -91,6 +94,7 @@ def parse_filename_suffix(xml_file: str) -> str:
     except Exception as e:
         logging.error(f"Unexpected error while processing {xml_file}: {e}")
         return "_unknown"
+
 
 def process_file(filepath: str, output_dir: str):
     """
@@ -149,6 +153,7 @@ def process_file(filepath: str, output_dir: str):
         del vasp  # Explicitly delete to free memory
         gc.collect()
 
+
 def process_xml_files(input_dir: str, output_dir: str):
     """
     Processes all XML files in the directory in numerical order based on filenames using multithreading.
@@ -172,6 +177,7 @@ def process_xml_files(input_dir: str, output_dir: str):
                 future.result()
             except Exception as e:
                 logging.error(f"Error processing file {filename}: {e}")
+
 
 if __name__ == "__main__":
     input_directory = os.path.join(get_project_path(), "output_analysis", "HF_analysis", "xmls")

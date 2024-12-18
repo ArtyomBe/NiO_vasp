@@ -1035,7 +1035,7 @@ class IR:
     def show(self):
         print("\n   Freq(cm-1)    IR Intensity     E_xx         E_yy         E_zz")
         for ir, freq, eps in zip(self.IRs, self.freqs, self.epsilons):
-            # Проверка размера eps, чтобы избежать ошибок
+            # Checking the eps size to avoid errors
             if isinstance(eps, np.ndarray) and eps.size >= 9:
                 print("{:12.3f} {:12.3f} {:12.3f} {:12.3f} {:12.3f}".format(
                     freq * units.ev2cm, ir, eps[0], eps[4], eps[8]))
@@ -1043,7 +1043,7 @@ class IR:
                 print("{:12.3f} {:12.3f} {:>12s} {:>12s} {:>12s}".format(
                     freq * units.ev2cm, ir, 'N/A', 'N/A', 'N/A'))
 
-        # Суммирование epsilons с проверкой
+        # Summation of epsilon with verification
         try:
             eps_sum = np.sum(self.epsilons, axis=0)
             if eps_sum.size >= 9:
@@ -1083,19 +1083,19 @@ def compute_epsilon_by_modes(mode, freq, z, V, mass):
 
 def safe_compute_epsilon_by_modes(mode, freq, z, V, mass):
     """
-    Безопасный вызов compute_epsilon_by_modes с проверкой входных данных.
+    A secure call to compute_epsilon_by_modes with input data validation.
     """
-    # Проверяем наличие данных
+    # Checking the availability of data
     if mode is None:
-        raise ValueError("Отсутствует параметр 'mode' (собственный вектор).")
+        raise ValueError("The 'mode' parameter (eigenvector) is missing.")
     if freq is None:
-        raise ValueError("Отсутствует параметр 'freq' (частота моды).")
+        raise ValueError("The 'freq' parameter (mode frequency) is missing.")
     if z is None:
-        raise ValueError("Отсутствует параметр 'z' (Борновские заряды).")
+        raise ValueError("The 'z' parameter (Born charges) is missing.")
     if V is None or V <= 0:
-        raise ValueError("Отсутствует или некорректен параметр 'V' (объём ячейки).")
+        raise ValueError("The parameter 'V' (cell volume) is missing or incorrect.")
     if mass is None or len(mass) == 0:
-        raise ValueError("Отсутствует параметр 'mass' (массив масс).")
+        raise ValueError("The 'mass' parameter is missing.")
 
-    # Все параметры корректны, вызываем основную функцию
+    # All parameters are correct, we call the main function
     return compute_epsilon_by_modes(mode, freq, z, V, mass)

@@ -5,18 +5,28 @@ import matplotlib.pyplot as plt
 import csv
 from utils.utils import get_project_path
 
+
 def setup_logging():
     """
-    Configures logging for the script.
+    Configures logging for the script and saves logs in a specific directory.
     """
+    # Determine the path to the folder for saving logs
+    log_dir = os.path.join(get_project_path(), "output_analysis", "HF_analysis", "logs")
+    os.makedirs(log_dir, exist_ok=True)  # Creating a folder if it does not exist
+
+    # The full path to the log file
+    log_file = os.path.join(log_dir, "HF_exchange.txt")
+
+    # Setting up logging
     logging.basicConfig(
         level=logging.INFO,
         format="%(asctime)s [%(levelname)s] %(message)s",
         handlers=[
             logging.StreamHandler(),
-            logging.FileHandler("analysis_log.txt", mode='w')
+            logging.FileHandler(log_file, mode='w')
         ]
     )
+
 
 def parse_log_file(log_file):
     """
@@ -53,6 +63,7 @@ def parse_log_file(log_file):
         logging.error(f"An error occurred while parsing the log file: {e}")
         raise
 
+
 def save_data(output_file, aexx_values, energies, band_gaps):
     """
     Saves the extracted data to a file.
@@ -74,6 +85,7 @@ def save_data(output_file, aexx_values, energies, band_gaps):
         logging.error(f"An error occurred while saving data: {e}")
         raise
 
+
 def save_band_gap_data(csv_file, aexx_values, band_gaps):
     """
     Saves AEXX and Band Gap data to a CSV file.
@@ -88,6 +100,7 @@ def save_band_gap_data(csv_file, aexx_values, band_gaps):
     except Exception as e:
         logging.error(f"An error occurred while saving Band Gap data: {e}")
         raise
+
 
 def plot_graphs(aexx_values, energies, band_gaps, output_dir):
     """
@@ -123,11 +136,12 @@ def plot_graphs(aexx_values, energies, band_gaps, output_dir):
         logging.error(f"An error occurred while plotting graphs: {e}")
         raise
 
+
 def main():
     setup_logging()
 
     project_path = get_project_path()
-    log_path = os.path.join(project_path, "output_analysis", "HF_analysis", "logs", "processing_log.txt")
+    log_path = os.path.join(project_path, "output_analysis", "HF_analysis", "logs", "Processing_All_xml_log.txt")
     output_path = os.path.join(project_path, "output_analysis", "HF_analysis", "logs", "HF_coordinates.txt")
     band_gap_csv = os.path.join(project_path, "output_analysis", "HF_analysis", "logs", "AEXX_Band_Gap.csv")
     output_dir = os.path.join(project_path, "output_analysis", "HF_analysis", "graphs")
@@ -149,6 +163,7 @@ def main():
 
     except Exception as e:
         logging.error(f"An error occurred during processing: {e}")
+
 
 if __name__ == "__main__":
     main()

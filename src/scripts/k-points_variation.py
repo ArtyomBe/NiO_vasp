@@ -10,6 +10,7 @@ band_gap_values = [4.89279, 5.29979, 4.8209]
 energy_values = [-68.99529934, -68.9690341, -69.0106054]
 time_seconds = [2102.141, 8551.097, 61051.312]
 
+
 def plot_graph(x, y, xlabel, ylabel, title, marker, color, filename=None):
     """
     Plots a graph with the given data and styling options.

@@ -2,23 +2,25 @@ import logging
 import os
 import shutil
 from xml.etree import ElementTree as ET
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import matplotlib.pyplot as plt
 from libs.vasprun_optimized import vasprun
 from utils.utils import get_project_path
 from colorlog import ColoredFormatter
+import gc
 
 def setup_logging(output_dir: str):
     """
     Configures logging to save logs in the specified output directory with colored console output.
     """
-    log_file = os.path.join(get_project_path(), "output_analysis", "HF_analysis", "logs", "processing_log.txt")
+    log_file = os.path.join(get_project_path(), "output_analysis", "HF_analysis", "logs", "Processing_All_xml_log.txt")
 
-    # Удаление старых обработчиков
+    # Remove old handlers
     for handler in logging.root.handlers[:]:
         logging.root.removeHandler(handler)
 
-    # Настройка цветного форматирования для консоли
+    # Colored console formatting
     formatter = ColoredFormatter(
         "%(log_color)s%(asctime)s [%(levelname)s] %(message)s",
         log_colors={
@@ -30,21 +32,21 @@ def setup_logging(output_dir: str):
         },
     )
 
-    # Обработчик для консоли
+    # Console handler
     console_handler = logging.StreamHandler()
     console_handler.setFormatter(formatter)
 
-    # Обработчик для файла
-    file_handler = logging.FileHandler(log_file, mode='w')
+    # Rotating file handler to limit file size
+    from logging.handlers import RotatingFileHandler
+    file_handler = RotatingFileHandler(log_file, maxBytes=10**6, backupCount=5)
     file_handler.setFormatter(logging.Formatter("%(asctime)s [%(levelname)s] %(message)s"))
 
-    # Настройка логирования
+    # Configure logging
     logging.basicConfig(
         level=logging.INFO,
         handlers=[console_handler, file_handler]
     )
     logging.info(f"Logging configured. Logs will be saved to {log_file}")
-
 
 def prepare_output_directory(output_dir: str):
     """
@@ -52,44 +54,36 @@ def prepare_output_directory(output_dir: str):
     """
     if os.path.exists(output_dir):
         shutil.rmtree(output_dir)
-    os.makedirs(output_dir)
-    logging.info(f"Output directory prepared: {output_dir}")
-
+    try:
+        os.makedirs(output_dir)
+        logging.info(f"Output directory prepared: {output_dir}")
+    except PermissionError as e:
+        logging.error(f"Permission error while creating output directory {output_dir}: {e}")
+        raise
 
 def parse_filename_suffix(xml_file: str) -> str:
     """
     Parses the XML file and returns a well-formatted suffix for filenames.
     """
     try:
-        # Parse XML
-        tree = ET.parse(xml_file)
-        root = tree.getroot()
-
-        # Initialize parts for suffix
         suffix_parts = []
-
-        # Define parameter mappings with specific formatting
         parameter_map = {
             "GGA": lambda x: f"GGA_{x.strip()}",
             "LDAU": lambda x: "U" if x.strip().upper() == "T" else "no_U",
             "AEXX": lambda x: f"AEXX_{round(float(x.strip()) * 100)}%",
         }
 
-        # Loop through parameters and extract values
-        for param, formatter in parameter_map.items():
-            element = root.find(f".//i[@name='{param}']")
-            if element is not None and element.text:
-                try:
-                    value = element.text.strip()
-                    formatted_value = formatter(value)
-                    suffix_parts.append(formatted_value)
-                    logging.debug(f"Parameter {param}: {value} -> {formatted_value}")
-                except ValueError as ve:
-                    logging.warning(f"Invalid value for {param} in {xml_file}: {ve}")
-
-        # Join parts into a single suffix
-        suffix = "_".join(suffix_parts)
-        return f"_{suffix}" if suffix_parts else "_unknown"
+        for event, element in ET.iterparse(xml_file, events=("start", "end")):
+            if element.tag == "i" and "name" in element.attrib:
+                param = element.attrib["name"]
+                if param in parameter_map and element.text:
+                    try:
+                        formatted_value = parameter_map[param](element.text)
+                        suffix_parts.append(formatted_value)
+                    except ValueError as ve:
+                        logging.warning(f"Invalid value for {param} in {xml_file}: {ve}")
+                element.clear()  # Free memory immediately
+        return f"_{'_'.join(suffix_parts)}" if suffix_parts else "_unknown"
 
     except ET.ParseError as pe:
         logging.error(f"XML parsing error for file {xml_file}: {pe}")
@@ -97,7 +91,6 @@ def parse_filename_suffix(xml_file: str) -> str:
     except Exception as e:
         logging.error(f"Unexpected error while processing {xml_file}: {e}")
         return "_unknown"
-
 
 def process_file(filepath: str, output_dir: str):
     """
@@ -132,61 +125,58 @@ def process_file(filepath: str, output_dir: str):
 
     # Generate plots and ensure they are closed after saving
     try:
-        #dos_path = os.path.join(output_dir, f"DOS_graph{suffix}.png")
-        #band_path = os.path.join(output_dir, f"BAND_graph{suffix}.png")
-        #band_dos_path = os.path.join(output_dir, f"BAND_DOS_graph{suffix}.png")
-        #dos_path = os.makedirs(os.path.join(output_dir, "DOS_graphs"), exist_ok=True)
-        #band_path = os.makedirs(os.path.join(output_dir, "BAND_graphs"), exist_ok=True)
-        #band_dos_path = os.makedirs(os.path.join(output_dir, "BAND_DOS_graphs"), exist_ok=True)
-        # Ensure the directories exist
         os.makedirs(os.path.join(output_dir, "DOS_graphs"), exist_ok=True)
         os.makedirs(os.path.join(output_dir, "BAND_graphs"), exist_ok=True)
         os.makedirs(os.path.join(output_dir, "BAND_DOS_graphs"), exist_ok=True)
 
-        # Define paths
         dos_path = os.path.join(output_dir, "DOS_graphs", f"DOS_graph{suffix}.png")
         band_path = os.path.join(output_dir, "BAND_graphs", f"BAND_graph{suffix}.png")
         band_dos_path = os.path.join(output_dir, "BAND_DOS_graphs", f"BAND_DOS_graph{suffix}.png")
 
-
         vasp.plot_dos(filename=dos_path)
-        plt.close()  # Close the DOS plot
+        plt.close('all')
 
         vasp.plot_band(filename=band_path)
-        plt.close()  # Close the BAND plot
+        plt.close('all')
 
         vasp.plot_band_dos(filename=band_dos_path)
-        plt.close()  # Close the BAND + DOS plot
+        plt.close('all')
 
-        logging.info(f"Plots saved: {dos_path}, {band_path}, {band_dos_path}")
+        #logging.info(f"Plots saved: {dos_path}, {band_path}, {band_dos_path}")
     except Exception as e:
         logging.error(f"Error generating plots for file {filepath}: {e}")
-
+    finally:
+        del vasp  # Explicitly delete to free memory
+        gc.collect()
 
 def process_xml_files(input_dir: str, output_dir: str):
     """
-    Processes all XML files in the directory in numerical order based on filenames.
+    Processes all XML files in the directory in numerical order based on filenames using multithreading.
     """
-    # Получаем список файлов с расширением .xml
     xml_files = [f for f in os.listdir(input_dir) if f.endswith('.xml')]
-
-    # Сортируем файлы по числовой части имени
     xml_files = sorted(xml_files, key=lambda x: int(''.join(filter(str.isdigit, x)) or 0))
 
     if not xml_files:
         logging.warning("No XML files found in the directory for processing.")
         return
 
-    for filename in xml_files:
-        filepath = os.path.join(input_dir, filename)
-        process_file(filepath, output_dir)
+    with ThreadPoolExecutor(max_workers=4) as executor:  # Limit threads to avoid memory exhaustion
+        future_to_file = {
+            executor.submit(process_file, os.path.join(input_dir, filename), output_dir): filename
+            for filename in xml_files
+        }
+
+        for future in as_completed(future_to_file):
+            filename = future_to_file[future]
+            try:
+                future.result()
+            except Exception as e:
+                logging.error(f"Error processing file {filename}: {e}")
 
 if __name__ == "__main__":
-    # Path to the directory with XML files
     input_directory = os.path.join(get_project_path(), "output_analysis", "HF_analysis", "xmls")
     output_directory = os.path.join(get_project_path(), "output_analysis", "HF_analysis", "graphs")
 
-    # Prepare the output directory and setup logging
     prepare_output_directory(output_directory)
     setup_logging(output_directory)
     process_xml_files(input_directory, output_directory)

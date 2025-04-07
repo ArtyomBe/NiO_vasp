@@ -5,13 +5,13 @@ import logging
 from utils.utils import get_project_path
 
 # Шаблон содержимого файла INCAR
-BASE_CONTENT = """SYSTEM   = percentage_study_c_V2O5
+BASE_CONTENT = """SYSTEM   = LDAU_study_c_V2O5
 # Начальные условия
 ISTART   = 0            # Начать расчет с нуля
 # Магнитные свойства
 ISPIN    = 2            # Спиновый расчет
 # Энергетические параметры
-ENMAX    = 500.0        # Энергия отсечки для плоскостных волн
+ENMAX    = 520.0        # Энергия отсечки для плоскостных волн
 EDIFF    = 1E-3         # Критерий сходимости по энергии (более строгий для HSE)
 # Размывание для изоляторов
 ISMEAR   = -5           # Метод размывания Тетраэдра
@@ -27,13 +27,14 @@ LORBIT   = 11           # Проектированная плотность со
 LMAXMIX  = 4            # Максимальный L для смешивания орбиталей (до f-орбиталей)
 # Оптимизация структуры
 IBRION   = 2            # Конъюгированный градиент для оптимизации геометрии
+
 LHFCALC  = .TRUE.       # Включить гибридный функционал
-AEXX     = {aexx:.2f}         # Процент обмена Хартри-Фока
+AEXX     = 0.15         # Процент обмена Хартри-Фока фиксирован на 15%
 # Учет параметра Хаббарда
 LDAU      = .TRUE.      # Включить DFT+U
 LDAUTYPE  = 2           # Тип схемы DFT+U (с использованием U и J)
-LDAUL     = 2 -1        # Значение L
-LDAUU     = 3.5 0.00   # Значение U
+LDAUL     = 2 -1        # Значение L (2 = d-орбитали для Ni, -1 = отключено для O)
+LDAUU     = {ldauu:.2f} 0.00   # Значение U
 LDAUPRINT = 2           # Полный вывод данных DFT+U
 """
 
@@ -47,16 +48,14 @@ def setup_logging():
         handlers=[logging.StreamHandler()]
     )
 
-
-def create_incar_file(folder_path, aexx):
+def create_incar_file(folder_path, ldauu):
     """
-    Creates an INCAR file with the specified AEXX value.
+    Creates an INCAR file with the specified LDAUU value.
     """
     incar_path = os.path.join(folder_path, "INCAR")
     with open(incar_path, "w") as file:
-        file.write(BASE_CONTENT.format(aexx=aexx))
+        file.write(BASE_CONTENT.format(ldauu=ldauu))
     logging.info(f"INCAR file created at {incar_path}")
-
 
 def copy_additional_files(source_path, destination_path):
     """
@@ -72,15 +71,17 @@ def copy_additional_files(source_path, destination_path):
         shutil.copy(source_file, destination_file)
         logging.info(f"Copied {source_file} to {destination_file}")
 
-
-def generate_folders(base_path, source_path):
+def generate_ldau_folders(base_path, source_path, interval=(0, 10), step=0.1):
     """
-    Generates folders and files for different AEXX values.
+    Generates folders and files for different LDAUU values within a specified interval and step.
     """
     try:
-        for i in range(0, 101):
-            aexx = i / 100  # Значение AEXX (в долях от 0.00 до 1.00)
-            folder_name = f"{i}_percent"  # Имя папки для текущего процента
+        start, end = interval
+        num_steps = int((end - start) / step) + 1
+
+        for i in range(num_steps):
+            ldauu = start + i * step  # Значение LDAUU
+            folder_name = f"U_{ldauu:.1f}"  # Имя папки для текущего значения U
             folder_path = os.path.join(base_path, folder_name)  # Полный путь к папке
 
             # Создаем папку, если она не существует
@@ -88,7 +89,7 @@ def generate_folders(base_path, source_path):
             logging.info(f"Folder created: {folder_path}")
 
             # Создаем файл INCAR
-            create_incar_file(folder_path, aexx)
+            create_incar_file(folder_path, ldauu)
 
             # Копируем дополнительные файлы
             copy_additional_files(source_path, folder_path)
@@ -100,15 +101,13 @@ def generate_folders(base_path, source_path):
     except Exception as e:
         logging.error(f"An unexpected error occurred: {e}")
 
-
 def main():
     setup_logging()
 
-    base_path = "/Users/artyombetekhtin/Desktop/Кванты/NiO/HF_percentage_study/V2O5/INPUTS"
-    source_path = os.path.join(get_project_path(), "test_cases", "V2O5")
+    base_path = "/Users/artyombetekhtin/Desktop/Кванты/NiO/LDAU_study/MnO/INPUTS"
+    source_path = os.path.join(get_project_path(), "test_cases", "MnO", "c_MnO")
 
-    generate_folders(base_path, source_path)
-
+    generate_ldau_folders(base_path, source_path, interval=(0, 10), step=0.1)
 
 if __name__ == "__main__":
     main()

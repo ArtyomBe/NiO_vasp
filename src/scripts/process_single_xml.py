@@ -20,7 +20,7 @@ def setup_logging():
         format="%(asctime)s [%(levelname)s] %(message)s",
         handlers=[
             logging.StreamHandler(),
-            logging.FileHandler("vasprun_analysis.log", mode='w')
+            logging.FileHandler(os.path.join(get_project_path(), "test_cases", "Submitting", "vasprun_analysis.log"), mode='w')
         ]
     )
 
@@ -117,7 +117,7 @@ def main(vasprun_file, output_dir, verbosity=1):
 
 
 if __name__ == "__main__":
-    vasprun_file = os.path.join(get_project_path(), "test_cases", "vasprun_CA_U.xml")  # Path to vasprun.xml
+    vasprun_file = os.path.join(get_project_path(), "test_cases", "Submitting", "vasprun.xml")  # Path to vasprun.xml
     output_directory = os.path.join(get_project_path(), "test_cases")  # Output directory
     verbosity_level = 1  # Verbosity level
 

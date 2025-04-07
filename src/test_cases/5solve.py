@@ -1,152 +1,148 @@
-import matplotlib.pyplot as plt
+import random
 import numpy as np
-
-# Константы и параметры
-k_B = 1.380649e-23
-N = 200  # Для демонстрации; для N=10^4 очень долгий расчет
-T_init = 300.0
-V_init = 1e-22
-m = 1e-28
-a = -1e-20  # Дж·нм^3
-b = 1e-21  # Дж·нм^5
-nm_to_m = 1e-9
-a_SI = a * (nm_to_m ** 3)
-b_SI = b * (nm_to_m ** 5)
-
-dt = 1e-14
-steps_equil = 2000
-steps_relax = 4000
-cutoff = 2e-9
+import time
+import tracemalloc
+import timeit
 
 
-def initialize_positions(N, L):
-    return np.random.rand(N, 3) * L
+class TuringMachine:
+    def __init__(self, tape, keys, noise):
+        self.tape = tape
+        self.keys = keys
+        self.noise = noise
+        self.head = 0  # Позиция головки на ленте (не используется в текущей реализации).
+        self.result = []  # Результат шифрования.
+        self.operations_count = 0  # Счетчик операций.
+
+    def read_matrix(self):
+        """Считывание исходной матрицы сообщения."""
+        return self.tape
+
+    def multiply_matrices(self, A, B):
+        """Перемножение двух матриц."""
+        self.operations_count += len(A) * len(B[0]) * len(B)
+        return np.dot(A, B).tolist()
+
+    def add_matrices(self, A, B):
+        """Сложение двух матриц."""
+        self.operations_count += len(A) * len(A[0])
+        return [[A[i][j] + B[i][j] for j in range(len(A[0]))] for i in range(len(A))]
+
+    def encrypt(self):
+        """Процесс шифрования сообщения."""
+        self.operations_count = 0
+        message_matrix = self.read_matrix()
+        result_matrix = message_matrix
+        for i, key in enumerate(self.keys):
+            result_matrix = self.multiply_matrices(result_matrix, key)
+            result_matrix = self.add_matrices(result_matrix, self.noise[i])
+        self.result = result_matrix
+        return result_matrix
+
+    def decrypt(self, inverse_keys):
+        """Процесс расшифровки сообщения с использованием обратных ключей."""
+        self.operations_count = 0
+        result_matrix = self.result
+        for i in range(len(inverse_keys) - 1, -1, -1):
+            result_matrix = self.add_matrices(result_matrix, [[-x for x in row] for row in self.noise[i]])
+            result_matrix = self.multiply_matrices(result_matrix, inverse_keys[i])
+        return result_matrix
 
 
-def initialize_velocities(N, T, m):
-    sigma = np.sqrt(k_B * T / m)
-    v = np.random.normal(0, sigma, (N, 3))
-    v -= v.mean(axis=0)
-    return v
+def text_to_matrix(text, cols):
+    unicode_values = [ord(char) for char in text]
+    rows = (len(unicode_values) + cols - 1) // cols
+    matrix = [[0] * cols for _ in range(rows)]
+    for i, val in enumerate(unicode_values):
+        matrix[i // cols][i % cols] = val
+    return matrix
 
 
-def apply_boundaries(r, v, L):
-    # Отражение от стенок
-    for i in range(3):
-        mask_low = r[:, i] < 0
-        mask_high = r[:, i] > L
-        v[mask_low, i] = -v[mask_low, i]
-        r[mask_low, i] = -r[mask_low, i]
-        v[mask_high, i] = -v[mask_high, i]
-        r[mask_high, i] = 2 * L - r[mask_high, i]
-    return r, v
+def matrix_to_text(matrix, original_length):
+    chars = []
+    count = 0
+    for row in matrix:
+        for value in row:
+            value = round(value)
+            if count < original_length:
+                chars.append(chr(value))
+                count += 1
+    return ''.join(chars)
 
 
-def compute_forces(r):
-    F = np.zeros_like(r)
-    Np = r.shape[0]
-    for i in range(Np):
-        for j in range(i + 1, Np):
-            rij = r[j] - r[i]
-            dist = np.linalg.norm(rij)
-            if dist < cutoff:
-                dist2 = dist * dist
-                dist4 = dist2 * dist2
-                dist6 = dist4 * dist2
-                Fmag = (3 * a_SI / dist4 + 5 * b_SI / dist6)
-                fij = Fmag * (rij / dist)
-                F[i] += fij
-                F[j] -= fij
-    return F
+def is_invertible(matrix):
+    np_matrix = np.array(matrix)
+    return np.linalg.det(np_matrix) != 0
 
 
-def compute_temperature(v, m):
-    KE = 0.5 * m * np.mean(np.sum(v * v, axis=1))
-    T = (2.0 / 3.0) * KE / k_B
-    return T
+def generate_invertible_matrix(size, min_val=1, max_val=100):
+    while True:
+        matrix = generate_random_matrix(size, size, min_val, max_val)
+        if is_invertible(matrix):
+            return matrix
 
 
-def compute_pressure(r, v, F, V):
-    # вириальный метод
-    T = compute_temperature(v, m)
-    P_ideal = N * k_B * T / V
-    pair_sum = 0.0
-    Np = r.shape[0]
-    for i in range(Np):
-        for j in range(i + 1, Np):
-            rij = r[j] - r[i]
-            dist = np.linalg.norm(rij)
-            if dist < cutoff:
-                dist2 = dist * dist
-                dist4 = dist2 * dist2
-                dist6 = dist4 * dist2
-                Fmag = (3 * a_SI / dist4 + 5 * b_SI / dist6)
-                fij = Fmag * (rij / dist)
-                pair_sum += np.dot(rij, fij)
-    P = P_ideal + (1.0 / (3.0 * V)) * 0.5 * pair_sum
-    return P
+def generate_random_matrix(rows, cols, min_val=1, max_val=100):
+    return [[random.randint(min_val, max_val) for _ in range(cols)] for _ in range(rows)]
 
 
-def run_simulation_for_volume(V_final):
-    # Копируем логику из исходного кода:
-    L_init = V_init ** (1 / 3)
-    r = initialize_positions(N, L_init)
-    v = initialize_velocities(N, T_init, m)
-
-    # Стабилизация при исходном объеме
-    for step in range(steps_equil):
-        F = compute_forces(r)
-        v += 0.5 * F / m * dt
-        r += v * dt
-        r, v = apply_boundaries(r, v, L_init)
-        F = compute_forces(r)
-        v += 0.5 * F / m * dt
-
-    # Увеличение объема до V_final
-    L_final = V_final ** (1 / 3)
-    for step in range(steps_relax):
-        F = compute_forces(r)
-        v += 0.5 * F / m * dt
-        r += v * dt
-        r, v = apply_boundaries(r, v, L_final)
-        F = compute_forces(r)
-        v += 0.5 * F / m * dt
-
-    T_final = compute_temperature(v, m)
-    P_final = compute_pressure(r, v, F, V_final)
-    return T_final, P_final
+def invert_matrix(matrix):
+    np_matrix = np.array(matrix)
+    inverse = np.linalg.inv(np_matrix)
+    return inverse.tolist()
 
 
-# Сгенерируем ряд объемов: от V_init до 3*V_init, например, 5 точек
-V_factors = [1.0, 1.5, 2.0, 2.5, 3.0]
-V_list = [factor * V_init for factor in V_factors]
+if __name__ == "__main__":
+    try:
+        user_text = input("Введите текст для шифрования: ")
+        if not user_text.strip():
+            raise ValueError("Ввод текста не может быть пустым.")
 
-T_list = []
-P_list = []
+        original_length = len(user_text)
+        message = text_to_matrix(user_text, cols=2)
 
-for Vf in V_list:
-    T_val, P_val = run_simulation_for_volume(Vf)
-    T_list.append(T_val)
-    P_list.append(P_val)
+        # Генерация ключевых и шумовых матриц.
+        key1 = generate_invertible_matrix(2)
+        key2 = generate_invertible_matrix(2)
+        noise1 = generate_random_matrix(len(message), 2, 1, 5)
+        noise2 = generate_random_matrix(len(message), 2, 1, 5)
+        inv_key1 = invert_matrix(key1)
+        inv_key2 = invert_matrix(key2)
 
-# Построим графики из файла с результатами
-volume, temperature, pressure = np.loadtxt("simulation_results.txt", skiprows=1, unpack=True)
+        tm = TuringMachine(message, [key1, key2], [noise1, noise2])
 
-fig, ax1 = plt.subplots()
-ax1.plot(volume, temperature, 'o-', color='blue', label='T(V)')
-ax1.set_xlabel('Объем (м^3)')
-ax1.set_ylabel('Температура (K)', color='blue')
-ax1.tick_params(axis='y', labelcolor='blue')
+        # Замер времени шифрования
+        start_time = time.time()
+        tracemalloc.start()
+        encrypted = tm.encrypt()
+        current, peak = tracemalloc.get_traced_memory()
+        tracemalloc.stop()
+        encryption_time = time.time() - start_time
 
-ax2 = ax1.twinx()
-ax2.plot(volume, pressure, 'o-r', label='P(V)')
-ax2.set_ylabel('Давление (Па)', color='red')
-ax2.tick_params(axis='y', labelcolor='red')
+        print("\nЗашифрованное сообщение:", encrypted)
+        print(f"Время шифрования: {encryption_time:.6f} секунд")
+        print(f"Использование памяти: {current / 1024:.2f} KB; Пиковое использование: {peak / 1024:.2f} KB")
+        print(f"Количество операций при шифровании: {tm.operations_count}")
 
-plt.title('Зависимость T и P от V при последовательном увеличении объема')
-plt.grid(True)
-plt.tight_layout()
+        # Замер времени расшифровки
+        start_time = time.time()
+        tracemalloc.start()
+        decrypted = tm.decrypt([inv_key1, inv_key2])
+        current, peak = tracemalloc.get_traced_memory()
+        tracemalloc.stop()
+        decryption_time = time.time() - start_time
 
-# Сохраняем графики
-plt.savefig('T_P_vs_V.png', dpi=600, format='png')  # Можно выбрать другой формат, например 'pdf' или 'svg'
-plt.close(fig)  # Закрываем фигуру, чтобы освободить память
+        print("\nРасшифрованное сообщение:")
+        print(matrix_to_text(decrypted, original_length))
+        print(f"Время расшифровки: {decryption_time:.6f} секунд")
+        print(f"Использование памяти: {current / 1024:.2f} KB; Пиковое использование: {peak / 1024:.2f} KB")
+        print(f"Количество операций при расшифровке: {tm.operations_count}")
+
+        # Производительность на множестве запусков
+        encryption_performance = timeit.timeit("tm.encrypt()", globals=globals(), number=100)
+        decryption_performance = timeit.timeit("tm.decrypt([inv_key1, inv_key2])", globals=globals(), number=100)
+        print(f"\nСреднее время шифрования за 100 запусков: {encryption_performance / 100:.6f} секунд")
+        print(f"Среднее время расшифровки за 100 запусков: {decryption_performance / 100:.6f} секунд")
+
+    except Exception as e:
+        print("Ошибка:", e)

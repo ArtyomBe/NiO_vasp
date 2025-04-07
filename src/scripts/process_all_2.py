@@ -3,6 +3,7 @@ import os
 import shutil
 from xml.etree import ElementTree as ET
 from concurrent.futures import ThreadPoolExecutor, as_completed
+
 import matplotlib.pyplot as plt
 from libs.vasprun_optimized import vasprun
 from utils.utils import get_project_path
@@ -14,7 +15,7 @@ def setup_logging(output_dir: str):
     """
     Configures logging to save logs in the specified output directory with colored console output.
     """
-    log_file = os.path.join(get_project_path(), "output_analysis", "HF_analysis", "TiO2", "Anatase", "logs", "Processing_All_xml_log.txt")
+    log_file = os.path.join(get_project_path(), "output_analysis", "HF_analysis", "NiO", "logs", "Processing_All_xml_log.txt")
 
     # Remove old handlers
     for handler in logging.root.handlers[:]:
@@ -179,8 +180,8 @@ def process_xml_files(input_dir: str, output_dir: str):
 
 
 if __name__ == "__main__":
-    input_directory = os.path.join(get_project_path(), "output_analysis", "HF_analysis", "TiO2", "Anatase", "xmls")
-    output_directory = os.path.join(get_project_path(), "output_analysis", "HF_analysis", "TiO2", "Anatase", "graphs")
+    input_directory = os.path.join(get_project_path(), "output_analysis", "HF_analysis", "NiO", "xmls")
+    output_directory = os.path.join(get_project_path(), "output_analysis", "HF_analysis", "NiO", "graphs")
 
     prepare_output_directory(output_directory)
     setup_logging(output_directory)

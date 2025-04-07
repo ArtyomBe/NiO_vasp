@@ -168,6 +168,5 @@ cython_debug/
 #.idea/
 
 #custom
-/output_analysis
 /test_cases
 /phonopy

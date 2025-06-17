@@ -1,5 +1,0 @@
-2025-04-06 17:00:36,680 [INFO] Data saved to /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/NiO/logs/HF_coordinates.txt
-2025-04-06 17:00:36,681 [INFO] Band Gap data saved to /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/NiO/logs/AEXX_Band_Gap.csv
-2025-04-06 17:00:42,182 [INFO] Energy vs HF Exchange plot saved to /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/NiO/graphs/Energy_vs_AEXX.png
-2025-04-06 17:00:46,023 [INFO] Band Gap vs HF Exchange plot saved to /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/NiO/graphs/BandGap_vs_AEXX.png
-2025-04-06 17:00:53,456 [INFO] Band Gap plot with experimental value saved to /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/NiO/graphs/BandGap_vs_AEXX_with_exp.png

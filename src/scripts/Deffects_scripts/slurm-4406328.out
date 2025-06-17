@@ -1,0 +1,45 @@
+Loading mkl version 2022.2.1
+Loading tbb version 2021.7.1
+Loading compiler-rt version 2022.2.1
+ running on    1 total cores
+ distrk:  each k-point on    1 cores,    1 groups
+ distr:  one band on    1 cores,    1 groups
+ using from now: INCAR     
+ vasp.5.4.4.18Apr17-6-g9f103f2a35 (build Apr 19 2018 18:49:55) complex          
+  
+ POSCAR found type information on POSCAR  Ni O 
+ POSCAR found :  2 types and       7 ions
+ scaLAPACK will be used
+ LDA part: xc-table for Ceperly-Alder, standard interpolation
+ POSCAR, INCAR and KPOINTS ok, starting setup
+ FFT: planning ...
+ WAVECAR not read
+ entering main loop
+       N       E                     dE             d eps       ncg     rms          rms(c)
+DAV:   1     0.538282392390E+03    0.53828E+03   -0.29635E+04257728   0.255E+03
+DAV:   2    -0.912327925207E+01   -0.54741E+03   -0.52561E+03272720   0.527E+02
+DAV:   3    -0.576456810189E+02   -0.48522E+02   -0.47539E+02287712   0.191E+02
+DAV:   4    -0.587414659748E+02   -0.10958E+01   -0.10900E+01291688   0.285E+01
+DAV:   5    -0.587702643294E+02   -0.28798E-01   -0.28792E-01289112   0.428E+00    0.240E+01
+RMM:   6    -0.609627918038E+02   -0.21925E+01   -0.12541E+02261363   0.102E+02    0.317E+01
+RMM:   7    -0.483421193783E+02    0.12621E+02   -0.36584E+01256434   0.547E+01    0.881E+00
+RMM:   8    -0.470245243871E+02    0.13176E+01   -0.68228E-01262239   0.749E+00    0.658E+00
+RMM:   9    -0.463728416134E+02    0.65168E+00   -0.53225E-01268797   0.575E+00    0.280E+00
+RMM:  10    -0.462614492283E+02    0.11139E+00   -0.14267E-01264472   0.304E+00    0.175E+00
+RMM:  11    -0.462468823489E+02    0.14567E-01   -0.46399E-02268498   0.183E+00    0.176E+00
+RMM:  12    -0.462320099182E+02    0.14872E-01   -0.50266E-02278359   0.164E+00    0.738E-01
+RMM:  13    -0.462276638972E+02    0.43460E-02   -0.32859E-03266431   0.576E-01    0.593E-01
+RMM:  14    -0.462247436009E+02    0.29203E-02   -0.16833E-03269961   0.378E-01    0.236E-01
+RMM:  15    -0.462239742732E+02    0.76933E-03   -0.21611E-03272701   0.370E-01    0.482E-02
+WARNING in EDDRMM: call to ZHEGV failed, returncode =   8  4     32
+WARNING in EDDRMM: call to ZHEGV failed, returncode =   8  4     32
+WARNING in EDDRMM: call to ZHEGV failed, returncode =   8  4     32
+WARNING in EDDRMM: call to ZHEGV failed, returncode =   8  4     32
+RMM:  16    -0.462239344084E+02    0.39865E-04   -0.81833E-05266924   0.813E-02    0.244E-02
+WARNING in EDDRMM: call to ZHEGV failed, returncode =   8  4     32
+RMM:  17    -0.462239302395E+02    0.41689E-05   -0.82420E-06230292   0.221E-02    0.169E-02
+WARNING in EDDRMM: call to ZHEGV failed, returncode =   8  4     32
+RMM:  18    -0.462239271031E+02    0.31364E-05   -0.10153E-05247843   0.224E-02    0.668E-03
+RMM:  19    -0.462239268150E+02    0.28806E-06   -0.12227E-06141637   0.939E-03
+   1 F= -.46223927E+02 E0= -.46219876E+02  d E =-.810110E-02
+vasp script

@@ -1,0 +1,4 @@
+2025-03-28 11:56:56,274 [INFO] Data saved to /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/MnO/logs/HF_coordinates.txt
+2025-03-28 11:56:56,275 [INFO] Band Gap data saved to /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/MnO/logs/AEXX_Band_Gap.csv
+2025-03-28 11:57:03,435 [INFO] Energy vs AEXX plot saved to /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/MnO/graphs/Energy_vs_AEXX.png
+2025-03-28 11:57:07,767 [INFO] Band Gap vs AEXX plot saved to /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/MnO/graphs/BandGap_vs_AEXX.png

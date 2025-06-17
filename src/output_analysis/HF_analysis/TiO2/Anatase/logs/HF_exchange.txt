@@ -1,0 +1,5 @@
+2025-04-06 17:02:08,225 [INFO] Data saved to /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/TiO2/Anatase/logs/HF_coordinates.txt
+2025-04-06 17:02:08,225 [INFO] Band Gap data saved to /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/TiO2/Anatase/logs/AEXX_Band_Gap.csv
+2025-04-06 17:02:13,534 [INFO] Energy vs HF Exchange plot saved to /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/TiO2/Anatase/graphs/Energy_vs_AEXX.png
+2025-04-06 17:02:17,824 [INFO] Band Gap vs HF Exchange plot saved to /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/TiO2/Anatase/graphs/BandGap_vs_AEXX.png
+2025-04-06 17:02:33,409 [INFO] Band Gap plot with experimental value saved to /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/TiO2/Anatase/graphs/BandGap_vs_AEXX_with_exp.png

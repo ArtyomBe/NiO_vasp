@@ -104,7 +104,9 @@ def generate_ldau_folders(base_path, source_path, interval=(0, 10), step=0.1):
 def main():
     setup_logging()
 
-    base_path = "/Users/artyombetekhtin/Desktop/Кванты/NiO/LDAU_study/MnO/INPUTS"
+    #base_path = "/Users/artyombetekhtin/Desktop/Кванты/NiO/LDAU_study/MnO/INPUTS"
+    #source_path = os.path.join(get_project_path(), "test_cases", "MnO", "c_MnO")
+    base_path = os.path.join(get_project_path(), "LDAU_study", "MnO", "INPUTS")
     source_path = os.path.join(get_project_path(), "test_cases", "MnO", "c_MnO")
 
     generate_ldau_folders(base_path, source_path, interval=(0, 10), step=0.1)

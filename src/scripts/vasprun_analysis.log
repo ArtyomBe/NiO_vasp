@@ -1,6 +1,0 @@
-2025-04-06 15:40:29,163 [INFO] Processing VASP file: /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/test_cases/Submitting/vasprun.xml
-2025-04-06 15:40:29,236 [INFO] Extracted VASP data:
-2025-04-06 15:40:29,236 [INFO] Generating plots...
-2025-04-06 15:40:29,516 [INFO] DOS plot saved to /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/test_cases/DOS_graph.png
-2025-04-06 15:40:29,752 [INFO] BAND plot saved to /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/test_cases/BAND_graph.png
-2025-04-06 15:40:30,629 [INFO] BAND+DOS plot saved to /Users/artyombetekhtin/PycharmProjects/nio_vasp/src/test_cases/BAND_dos_graph.png

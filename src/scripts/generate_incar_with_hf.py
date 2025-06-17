@@ -104,7 +104,8 @@ def generate_folders(base_path, source_path):
 def main():
     setup_logging()
 
-    base_path = "/Users/artyombetekhtin/Desktop/Кванты/NiO/HF_percentage_study/V2O5/INPUTS"
+    #base_path = "/Users/artyombetekhtin/Desktop/Кванты/NiO/HF_percentage_study/V2O5/INPUTS"
+    base_path = os.path.join(get_project_path(), "HF_study", "INPUTS", "TiO2")
     source_path = os.path.join(get_project_path(), "test_cases", "V2O5")
 
     generate_folders(base_path, source_path)

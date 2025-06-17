@@ -1,10 +1,16 @@
 import os
 import shutil
 import re
+from utils.utils import get_project_path
 
 # Пути
-source_dir = "/Users/artyombetekhtin/Desktop/Кванты/NiO/HF_percentage_study/TiO2/OUTPUTS/Anatase"
-destination_dir = "/Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/TiO2/Anatase/xmls"
+project_path = get_project_path()
+source_dir = os.path.join(project_path, "HF_study", "TiO2", "OUTPUTS", "Anatase")
+destination_dir = os.path.join(project_path, "output_analysis", "HF_analysis", "TiO2", "Anatase", "xmls")
+
+# Пути
+#source_dir = "/Users/artyombetekhtin/Desktop/Кванты/NiO/HF_percentage_study/TiO2/OUTPUTS/Anatase"
+#destination_dir = "/Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/TiO2/Anatase/xmls"
 
 # Очищаем целевую директорию
 if os.path.exists(destination_dir):

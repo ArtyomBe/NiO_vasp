@@ -117,7 +117,7 @@ def main(vasprun_file, output_dir, verbosity=1):
 
 
 if __name__ == "__main__":
-    vasprun_file = os.path.join(get_project_path(), "test_cases", "Submitting", "vasprun.xml")  # Path to vasprun.xml
+    vasprun_file = os.path.join(get_project_path(), "test_cases", "vasprunnn.xml")  # Path to vasprun.xml
     output_directory = os.path.join(get_project_path(), "test_cases")  # Output directory
     verbosity_level = 1  # Verbosity level
 

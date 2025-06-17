@@ -2,9 +2,14 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
+import os
+from utils.utils import get_project_path
 
 # Загрузка данных
-file_path = '/Users/artyombetekhtin/PycharmProjects/nio_vasp/src/output_analysis/HF_analysis/NiO/logs/AEXX_Band_Gap.csv'
+file_path = os.path.join(
+    get_project_path(),
+    "output_analysis", "HF_analysis", "NiO", "logs", "AEXX_Band_Gap.csv"
+)
 data = pd.read_csv(file_path)
 
 # Извлечение данных и удаление последней точки, если это 100%
@@ -64,4 +69,5 @@ plt.ylabel('Band Gap (eV)')
 plt.grid(True)
 plt.tight_layout()
 plt.show()
+
 print(angle_deg)

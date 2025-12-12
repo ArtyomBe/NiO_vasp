@@ -5,36 +5,29 @@ import logging
 from utils.utils import get_project_path
 
 # Шаблон содержимого файла INCAR
-BASE_CONTENT = """SYSTEM   = percentage_study_c_V2O5
-# Начальные условия
-ISTART   = 0            # Начать расчет с нуля
-# Магнитные свойства
-ISPIN    = 2            # Спиновый расчет
-# Энергетические параметры
-ENMAX    = 500.0        # Энергия отсечки для плоскостных волн
-EDIFF    = 1E-3         # Критерий сходимости по энергии (более строгий для HSE)
-# Размывание для изоляторов
-ISMEAR   = -5           # Метод размывания Тетраэдра
-SIGMA    = 0.1          # Ширина размывания (для HSE не влияет на результат)
-# Смешивание плотности
-AMIX     = 0.2          # Прямое смешивание для плотности
-BMIX     = 0.00001      # Взвешенное смешивание для плотности
-AMIX_MAG = 0.8          # Прямое смешивание для магнитной плотности
-BMIX_MAG = 0.00001      # Взвешенное смешивание для магнитной плотности
-# Вывод данных
-LORBIT   = 11           # Проектированная плотность состояний (PDOS)
-# Орбитальное смешивание
-LMAXMIX  = 4            # Максимальный L для смешивания орбиталей (до f-орбиталей)
-# Оптимизация структуры
-IBRION   = 2            # Конъюгированный градиент для оптимизации геометрии
-LHFCALC  = .TRUE.       # Включить гибридный функционал
-AEXX     = {aexx:.2f}         # Процент обмена Хартри-Фока
-# Учет параметра Хаббарда
-LDAU      = .TRUE.      # Включить DFT+U
-LDAUTYPE  = 2           # Тип схемы DFT+U (с использованием U и J)
-LDAUL     = 2 -1        # Значение L
-LDAUU     = 3.5 0.00   # Значение U
-LDAUPRINT = 2           # Полный вывод данных DFT+U
+BASE_CONTENT = """SYSTEM  = NiO
+NCORE   = 8
+
+ENCUT   = 600
+ALGO    = Fast
+IBRION  = 2
+ISIF    = 3
+NSW     = 1000
+POTIM   = 0.2
+
+EDIFF   = 1.0e-06
+ISYM    = 0
+LREAL   = .FALSE.
+
+ISMEAR  = 0
+SIGMA   = 0.05
+
+PREC    = Accurate
+ADDGRID = .TRUE.
+
+NWRITE  = 1
+LCHARG  = .FALSE.
+LWAVE   = .FALSE.
 """
 
 def setup_logging():
@@ -106,7 +99,7 @@ def main():
 
     #base_path = "/Users/artyombetekhtin/Desktop/Кванты/NiO/HF_percentage_study/V2O5/INPUTS"
     base_path = os.path.join(get_project_path(), "HF_study", "INPUTS", "TiO2")
-    source_path = os.path.join(get_project_path(), "test_cases", "V2O5")
+    source_path = os.path.join(get_project_path(), "test_cases", "NiO")
 
     generate_folders(base_path, source_path)
 

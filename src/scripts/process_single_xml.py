@@ -20,7 +20,7 @@ def setup_logging():
         format="%(asctime)s [%(levelname)s] %(message)s",
         handlers=[
             logging.StreamHandler(),
-            logging.FileHandler(os.path.join(get_project_path(), "test_cases", "Submitting", "vasprun_analysis.log"), mode='w')
+            logging.FileHandler(os.path.join(get_project_path(), "test_cases", "vasprun_analysis.log"), mode='w')
         ]
     )
 
@@ -73,15 +73,15 @@ def generate_plots(vasp, output_dir):
     """
     try:
         logging.info("Generating plots...")
-        dos_filename = os.path.join(output_dir, "DOS_graph.png")
+        dos_filename = os.path.join(output_dir, "Ti_DOS_graph.png")
         vasp.plot_dos(filename=dos_filename, style="t+spd")
         logging.info(f"DOS plot saved to {dos_filename}")
 
-        band_filename = os.path.join(output_dir, "BAND_graph.png")
+        band_filename = os.path.join(output_dir, "Ti_BAND_graph.png")
         vasp.plot_band(filename=band_filename)
         logging.info(f"BAND plot saved to {band_filename}")
 
-        band_dos_filename = os.path.join(output_dir, "BAND_dos_graph.png")
+        band_dos_filename = os.path.join(output_dir, "Ti_BAND_dos_graph.png")
         vasp.plot_band_dos(filename=band_dos_filename)
         logging.info(f"BAND+DOS plot saved to {band_dos_filename}")
 
@@ -117,7 +117,7 @@ def main(vasprun_file, output_dir, verbosity=1):
 
 
 if __name__ == "__main__":
-    vasprun_file = os.path.join(get_project_path(), "test_cases", "vasprunnn.xml")  # Path to vasprun.xml
+    vasprun_file = os.path.join(get_project_path(), "test_cases", "HF_study", "vaspruncheg.xml")  # Path to vasprun.xml
     output_directory = os.path.join(get_project_path(), "test_cases")  # Output directory
     verbosity_level = 1  # Verbosity level
 

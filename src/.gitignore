@@ -168,7 +168,7 @@ cython_debug/
 #.idea/
 
 #custom
-/test_cases
+test_cases
 /phonopy
 /USPP_PW91
-/POTCAR_files
+POTCAR_files

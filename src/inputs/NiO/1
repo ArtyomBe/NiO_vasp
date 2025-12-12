@@ -1,0 +1,35 @@
+SYSTEM   = NiO (AFM-II, Bands PBE+U)
+
+ENCUT    = 600
+PREC     = Accurate
+ADDGRID  = .TRUE.
+LREAL    = .FALSE.
+EDIFF    = 1E-08
+
+ISPIN    = 2
+ISYM     = 0
+LASPH    = .TRUE.
+LDAU     = .TRUE.
+LDAUTYPE = 2
+LDAUL    = 2  -1
+LDAUU    = 6.0 0.0
+LDAUJ    = 0   0
+
+ISTART   = 1
+ICHARG   = 11
+ALGO     = Normal
+NELM     = 1
+IBRION   = -1
+NSW      = 0
+
+ISMEAR   = 0
+SIGMA    = 0.01
+
+LORBIT   = 11
+
+NWRITE   = 1
+LCHARG   = .FALSE.
+LWAVE    = .FALSE.
+
+NCORE    = 8
+#KPAR    = 8

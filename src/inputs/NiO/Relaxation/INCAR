@@ -1,0 +1,23 @@
+SYSTEM  = NiO (Relaxation)
+NCORE   = 8
+
+ENCUT   = 600
+ALGO    = Fast
+IBRION  = 2
+ISIF    = 3
+NSW     = 1000
+POTIM   = 0.2
+
+EDIFF   = 1.0e-06
+ISYM    = 0
+LREAL   = .FALSE.
+
+ISMEAR  = 0
+SIGMA   = 0.05
+
+PREC    = Accurate
+ADDGRID = .TRUE.
+
+NWRITE  = 1
+LCHARG  = .TRUE.
+LWAVE   = .TRUE.
